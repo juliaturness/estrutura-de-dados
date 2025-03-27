@@ -1,0 +1,47 @@
+
+plugins {
+  id 'java-library'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   testImplementation("org.junit.jupiter:junit-jupiter:5.11.0")
+   testImplementation(platform("org.junit:junit-bom:5.11.0"))
+   testImplementation 'org.javatuples:javatuples:1.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+sourceSets {
+   main {
+      java {
+         srcDirs = ['src']
+      }
+   }
+	
+   test {
+      java {
+         srcDirs = ['test']
+      }
+   }
+}
+
+jar {
+   manifest {
+      attributes("Implementation-Title": "ESD-Fila",
+                   "Implementation-Version": archiveVersion)
+   }
+}
+

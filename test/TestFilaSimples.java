@@ -53,7 +53,7 @@ class TestFilaSimples {
         q.adiciona(Integer.valueOf(3));
         q.remove();
         q.remove();
-        
+
         for (int j=0; j < 5; j++) {
             var val = Integer.valueOf(j);
             q.adiciona(val);
@@ -94,7 +94,7 @@ class TestFilaSimples {
         Fila<Integer> q = new Fila<>(5);
 
         assertThrows(IndexOutOfBoundsException.class, () -> q.frente(), "acessar frente de fila vazia deve disparar uma exceção IndexOutOfBoundsException");
-    }    
+    }
 
     @org.junit.jupiter.api.Test
     @DisplayName("Testa enfileirar em fila cheia")
@@ -107,7 +107,7 @@ class TestFilaSimples {
         }
 
         assertThrows(IndexOutOfBoundsException.class, () -> q.adiciona(Integer.valueOf(8)), "enfileirar em fila cheia deve disparar uma exceção IndexOutOfBoundsException");
-    }    
+    }
 
     @org.junit.jupiter.api.Test
     @DisplayName("Testa desenfileirar de fila vazia")
@@ -115,5 +115,5 @@ class TestFilaSimples {
         Fila<Integer> q = new Fila<>(5);
 
         assertThrows(IndexOutOfBoundsException.class, () -> q.remove(), "desenfileirar de fila vazia deve disparar uma exceção IndexOutOfBoundsException");
-    }        
+    }
 }

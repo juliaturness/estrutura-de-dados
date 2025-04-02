@@ -25,7 +25,7 @@ public class Fila <T> {
         // de fila cheia
 
         if(len == area.length) {
-            throw new ArrayIndexOutOfBoundsException("Fila Cheia");
+            expande();
         }
             area[fim] = algo;
             fim++;
@@ -37,7 +37,6 @@ public class Fila <T> {
 
     public T remove() {
         // dispara
-
 
 
         if(len == 0) {
@@ -77,6 +76,18 @@ public class Fila <T> {
     }
 
     public void limpa() {
+
+    }
+
+    public void expande(){
+        T[] capmaior = (T[])new Object[area.length * 2];
+
+        for (int i =0; i < len; i++) {
+            capmaior[i] = area[(i + inicio) % area.length];
+        }
+        area = capmaior;
+        fim = len;
+        inicio = 0;
 
     }
 }

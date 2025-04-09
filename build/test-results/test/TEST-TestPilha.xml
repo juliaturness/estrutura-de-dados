@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestPilha" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-04-09T22:56:10" hostname="sje-lin-prog-744522" time="0.044">
+  <properties/>
+  <testcase name="Testa desempilhar de pilha vazia" classname="TestPilha" time="0.021"/>
+  <testcase name="Testa empilhar valores" classname="TestPilha" time="0.001"/>
+  <testcase name="Testa desempilhar valores" classname="TestPilha" time="0.003"/>
+  <testcase name="Testa empilhar em pilha cheia" classname="TestPilha" time="0.004"/>
+  <testcase name="Testa criação de pilha: deve estar vazia ao ser criada" classname="TestPilha" time="0.003"/>
+  <testcase name="Testa empilhar valores e acessar topo" classname="TestPilha" time="0.001"/>
+  <testcase name="Testa acessar topo de pilha vazia" classname="TestPilha" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

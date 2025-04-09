@@ -6,10 +6,11 @@ public class Fila <T> {
     int inicio = 0;
     int fim = 0;
     int len = 0;
+    final int TAMANHO = 8;
 
     @SuppressWarnings("unchecked")
-    public Fila(int cap) {
-        area = (T[]) new Object[cap];
+    public Fila() {
+        area = (T[]) new Object[TAMANHO];
     }
 
     public int comprimento() {
@@ -21,53 +22,49 @@ public class Fila <T> {
     }
 
     public void adiciona(T algo) {
-        // dispara exceção IndexOutOfBounds
-        // de fila cheia
+        // dispara exceção IndexOutOfBoundsException
+        // se a fila estiver cheia
 
-        if(len == area.length) {
+        if (len == area.length) {
+//            throw new IndexOutOfBoundsException();
             expande();
         }
-            area[fim] = algo;
-            fim++;
-            if(fim == area.length) {
-                fim = 0;
-            }
-            len++;
+
+        area[fim] = algo;
+        len++;
+        // incremento circular
+        fim = (fim + 1) % area.length;
     }
 
     public T remove() {
-        // dispara
+        // dispara exceção IndexOutOfBoundsException
+        // se a fila estiver vazia
 
-
-        if(len == 0) {
-            throw new ArrayIndexOutOfBoundsException("Fila vazia");
+        if (len == 0) {
+            throw new ArrayIndexOutOfBoundsException();
         }
+
         T algo = area[inicio];
         area[inicio] = null;
-        inicio++;
-       if (inicio == area.length) {
-           inicio = 0;
-       }
-       len--;
+        len--;
+        // incremento circular
+        inicio = (inicio + 1) % area.length;
 
         return algo;
     }
 
     public T frente() {
-        if(len == 0) {
-            throw new ArrayIndexOutOfBoundsException("Fila vazia");
+        if (len == 0) {
+            throw new ArrayIndexOutOfBoundsException();
         }
         return area[inicio];
     }
 
-    public T fim() {
-        if(len == 0) {
-            throw new ArrayIndexOutOfBoundsException("Fila vazia");
+    public T tras() {
+        if (len == 0) {
+            throw new ArrayIndexOutOfBoundsException();
         }
-        int pos = fim - 1;
-        if (pos < 0) {
-            pos = area.length - 1;
-        }
+        int pos = (fim - 1 + area.length) % area.length;
         return area[pos];
     }
 
@@ -76,18 +73,24 @@ public class Fila <T> {
     }
 
     public void limpa() {
+        for (int i = 0; i < len; i++) {
+            area[(inicio + i) % area.length] = null;
+        }
 
+        inicio = 0;
+        fim = 0;
+        len = 0;
     }
 
-    public void expande(){
-        T[] capmaior = (T[])new Object[area.length * 2];
+    public void expande() {
+        T[] novo = (T[]) new Object[area.length * 2];
 
-        for (int i =0; i < len; i++) {
-            capmaior[i] = area[(i + inicio) % area.length];
+        for (int i = 0; i < len; i++) {
+            novo[i] = area[(inicio + i) % area.length];
         }
-        area = capmaior;
+
+        area = novo;
         fim = len;
         inicio = 0;
-
     }
 }

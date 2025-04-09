@@ -3,7 +3,7 @@ import esd.Fila;
 public class Main {
     public static void main(String[] args) {
         // cria uma Fila com capacidade para armazenar 8 dados
-        Fila<String> q = new Fila<>(8);
+        Fila<String> q = new Fila<>();
 
         // Enfileira algumas String na Fila ...
         q.adiciona("banana");

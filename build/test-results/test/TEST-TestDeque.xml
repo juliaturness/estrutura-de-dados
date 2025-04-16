@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestDeque" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-04-16T22:54:53" hostname="sje-lin-prog-744522" time="0.056">
+  <properties/>
+  <testcase name="Testa acessar acessa com posição inválida" classname="TestDeque" time="0.02"/>
+  <testcase name="Testa inserir valores" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa anexar valores" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa enfileirar valores e acessar acessa_final" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa retirar valores do final" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa criação de Deque: deve estar vazia ao ser criada" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa enfileirar valores e acessar posições quaisquer" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa enfileirar valores e acessar acessa_inicio" classname="TestDeque" time="0.003"/>
+  <testcase name="Testa retirar valores do inicio" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa enfileirar valores a partir de um posição diferente do início da área de armazenamento, para evidenciar se Deque foi feito como fila circular" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa acessar acessa_final de Deque vazia" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa enfileirar em Deque cheia" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa desenfileirar de Deque vazia" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa acessar acessa_inicio de Deque vazia" classname="TestDeque" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

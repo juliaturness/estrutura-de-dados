@@ -6,7 +6,7 @@ public class ContadorBinario {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite o numero: ");
+        System.out.println("digite o numero desejado: ");
         int numero = scanner.nextInt();
 
         Queue<String> fila = new ArrayDeque<>();

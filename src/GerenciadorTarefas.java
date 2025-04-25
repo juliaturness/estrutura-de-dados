@@ -23,7 +23,7 @@ public class GerenciadorTarefas {
         BufferedReader reader = Files.newBufferedReader(path);
         List<Queue<String>> filas = new ArrayList<>();
 
-        for(int i =0; i<3; i++){
+        for(int i =0; i<=5; i++){
             filas.add(new LinkedList<>());
         }
          String linha;
@@ -39,6 +39,7 @@ public class GerenciadorTarefas {
             }
         }
         reader.close();
+
     }
 
     public static void main(String[] args) throws IOException {

@@ -1,7 +1,2 @@
-4: documentar o subsistema A
-1: entrevistar o cliente
-2: modelar o subsistema B
-5: modelar o subsistema A
-1: identificar os requisitos do subsistema A
-3: implementar o subsistema A
-2: implementar o subsistema B
+Em um belo dia de sol, Bilica saiu de casa e foi pra praia do Campeche passear.
+Após caminhar algumas horas, resolveu ir pro Centro.

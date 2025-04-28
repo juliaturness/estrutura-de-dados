@@ -25,6 +25,7 @@ public class Deque <T> {
             return area.length;
         }
 
+        // no final
         public void adiciona(T algo) {
 
             if (len == area.length) {
@@ -37,6 +38,7 @@ public class Deque <T> {
             fim = (fim + 1) % area.length;
         }
 
+        // no inicio
         public void insere(T algo) {
             if (len == area.length) {
                 expande();

@@ -52,12 +52,14 @@ public class ListaSequencialSimples <T> {
 
     public int procura(T valor) {
         // retorna um inteiro que representa aposição onde valor foi encontrado pela primeira vez (contando do início da lista)
-        // retorna -1 se não o encontrar !
+        // retorna -1 se não o encontrar !,
+        return 0;
     }
 
     public T obtem(int indice) {
         // retorna o valor armazenado na posição indica pelo parâmetro "indice"
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
+        return null;
     }
 
     public void substitui(int indice, T valor) {

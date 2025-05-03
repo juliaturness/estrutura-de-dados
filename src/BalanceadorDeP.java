@@ -22,27 +22,36 @@ public class BalanceadorDeP {
         //Define o argumento como caminho
         String CaminhoArquivo = args[0];
 
+        // para ler cada linha do arquivo
         BufferedReader br = new BufferedReader(new FileReader(CaminhoArquivo));
         String linha;
         int numLinha = 1;
         Pilha<Posicao> pilha = new Pilha<>();
-        while ((linha = br.readLine()) != null) {
-            for (int i = 0; i < linha.length(); i++) {
-                char c = linha.charAt(i);
 
+        // Enquanto a linha não for nula
+        while ((linha = br.readLine()) != null) {
+
+            // e enquanto o indice não for maior que linha.lenght, ou seja, enquanto houver linha
+            for (int i = 0; i < linha.length(); i++) {
+                // atribui o indice para o caracter
+                char c = linha.charAt(i);
                 int coluna = i + 1;
+                // empilha para verificar depois
                 if (c == '(') {
                     pilha.empilha(new Posicao(numLinha, coluna));
                 } else if (c == ')') {
+                    // verifica se a pilha ta vazia, se estiver é pq há um parentese fechado sem abertura
                     if (pilha.estaVazia()) {
                         System.out.println("Parêntese fechado na linha " + numLinha + ", coluna " + coluna);
                         return;
                     }
+                    // se houver um '(' e um ')' é pq ta balanceado
                     pilha.desempilha();
                 }
             }
             numLinha++;
         }
+        // Se a pilha não estiver vazia é pq há um parentese aberto sem fechamento
         if (!pilha.estaVazia()) {
             Posicao restante = pilha.desempilha();
             System.out.println("Parentese aberto na linha " + restante.linha + ", coluna " + restante.coluna);

@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class a {
+public class SeparaTicket {
     public static void main(String[] args) {
         Deque<String> urgentes = new Deque<>();
         Deque<String> avisos = new Deque<>();

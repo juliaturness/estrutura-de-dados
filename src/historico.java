@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class historico {
 
     public static void main(String[] args) {
+
         // deque para armazenar as entradas
         Deque<String> entrada = new Deque<>();
         Scanner scanner = new Scanner(System.in);
@@ -19,10 +20,11 @@ public class historico {
 
             // switch utilizado para comparar os comandos
             switch (comando) {
+
                 case "historico":
                     // se o comando for historico ent vai adicionar o comando
-                    // equanto o deque não estiver vazio ele vai extrair o final para que seja na ordem mais recente
-
+                    // equanto o deque não estiver vazio ele vai extrair o final
+                    // para que seja na ordem mais recente
                     entrada.adiciona(comando);
                     System.out.println("Acessando o seu histórico: ");
 
@@ -39,8 +41,7 @@ public class historico {
                     return;
 
                 default:
-                    // se o usuário der mais que cinco comandos ent vai retirar o comando mais velho
-
+                    // se o usuário der mais que cinco comandos ent vai retirar o comando mais antigo
                     entrada.adiciona(comando);
                     if (entrada.capacidade() >=5) {
                         entrada.extrai_inicio();

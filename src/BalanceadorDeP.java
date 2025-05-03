@@ -28,9 +28,8 @@ public class BalanceadorDeP {
         int numLinha = 1;
         Pilha<Posicao> pilha = new Pilha<>();
 
-        // Enquanto a linha não for nula
+        //enquanto estiver tendo linha para ler
         while ((linha = br.readLine()) != null) {
-
             // e enquanto o indice não for maior que linha.lenght, ou seja, enquanto houver linha
             for (int i = 0; i < linha.length(); i++) {
                 // atribui o indice para o caracter

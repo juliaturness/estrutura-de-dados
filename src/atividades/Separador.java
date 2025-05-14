@@ -1,3 +1,5 @@
+package atividades;
+
 import esd.Deque;
 
 import java.io.BufferedReader;

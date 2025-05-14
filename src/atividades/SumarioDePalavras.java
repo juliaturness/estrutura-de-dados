@@ -1,3 +1,5 @@
+package atividades;
+
 import esd.Fila;  // Sua implementação da Fila
 import java.io.BufferedReader;
 import java.io.FileReader;

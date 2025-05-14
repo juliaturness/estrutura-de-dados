@@ -1,4 +1,4 @@
-//import esd.ListaSequencial;
+import esd.ListaSequencial;
 import esd.ListaSequencialSimples;
 import org.junit.jupiter.api.DisplayName;
 
@@ -27,6 +27,8 @@ class TestListaSequencialSimples {
         assertThrows(IndexOutOfBoundsException.class, () -> {q.obtem(0);});
         q.adiciona(Integer.valueOf(10));
 
+        // acessar uma posição negativa
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.obtem(-1);});
         // acessar uma posição igual ao comprimento da lista
         assertThrows(IndexOutOfBoundsException.class, () -> {q.obtem(1);});
         // acessar uma posição maior que comprimento da lista
@@ -99,6 +101,9 @@ class TestListaSequencialSimples {
         // remover de lista vazia
         assertThrows(IndexOutOfBoundsException.class, () -> {q.remove(0);});
         q.adiciona(Integer.valueOf(10));
+
+        // acessar uma posição negativa
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.remove(-1);});
         // remover da posição igual ao comprimento
         assertThrows(IndexOutOfBoundsException.class, () -> {q.remove(1);});
         // remover da posição maior que comprimento
@@ -175,6 +180,23 @@ class TestListaSequencialSimples {
             assert(val.equals(val2));
         }
 
+    }
+
+    @org.junit.jupiter.api.Test
+    @DisplayName("Testa substituir valor de posição inválida")
+    void substitui_invalido() throws InterruptedException, IOException {
+        ListaSequencialSimples<Integer> q = new ListaSequencialSimples<>();
+
+        // remover de lista vazia
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.substitui(0, 45);});
+        q.adiciona(Integer.valueOf(10));
+
+        // acessar uma posição negativa
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.substitui(-1, 44);});
+        // remover da posição igual ao comprimento
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.substitui(1, 45);});
+        // remover da posição maior que comprimento
+        assertThrows(IndexOutOfBoundsException.class, () -> {q.substitui(7, 44);});
     }
 
 }

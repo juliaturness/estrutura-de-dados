@@ -16,7 +16,14 @@ public class ListaSequencialSimples <T> {
     @SuppressWarnings("unchecked")
     void expande(int len) {
         // isto será usado quando for necessário expandir a capacidade da lista
+        T[] newArea = (T[]) new Object[len];
+        for (int i =0; i < len; i++) {
+            newArea[i] = area[i];
+//}
+        area = newArea;
     }
+
+}
 
 
     public void expande() {
@@ -29,7 +36,7 @@ public class ListaSequencialSimples <T> {
     }
 
     public int capacidade() {
-        return len ;
+        return area.length;
     }
 
     public void adiciona(T elemento) {
@@ -38,7 +45,6 @@ public class ListaSequencialSimples <T> {
         }
         area[fim] = elemento;
         len ++;
-        fim = (fim + 1) / area.length;
 
     }
 
@@ -46,34 +52,56 @@ public class ListaSequencialSimples <T> {
         // remove um valor da posição indicada pelo parâmetro "indice"
         // move para essa posição o valor que está no final da lista
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
-
-
+        if (indice < 0 || indice >= len) {
+            throw new IndexOutOfBoundsException("Índice inválido: " + indice);
+        }
+        for (int i = indice; i < len - 1; i++) {
+            area[i] = area[i + 1]; // shift à esquerda
+        }
+        area[len - 1] = null;
+        len--;
     }
 
     public int procura(T valor) {
         // retorna um inteiro que representa aposição onde valor foi encontrado pela primeira vez (contando do início da lista)
         // retorna -1 se não o encontrar !,
-        return 0;
+        for (int i =0; i<len; i++){
+            if (valor != null && valor.equals(area[i])){
+                return i;
+            }
+        }
+        return -1;
     }
 
     public T obtem(int indice) {
         // retorna o valor armazenado na posição indica pelo parâmetro "indice"
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
-        return null;
+        if(indice < 0 || indice >= len){
+            throw new IndexOutOfBoundsException("Índice Invalido:"+ indice);
+        }
+        return area[indice];
     }
 
     public void substitui(int indice, T valor) {
         // armazena o valor na posição indicada por "indice", substituindo o valor lá armazenado atualmente
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
+        if(indice < 0 || indice >= len){
+            throw new IndexOutOfBoundsException("Índice Invalido:"+ indice);
+        }
+        area[indice] = valor;
     }
 
     public int comprimento() {
         // retorna um inteiro que representa o comprimento da lista (quantos valores estão armazenados)
-        return area.length;
+        return len;
     }
 
     public void limpa() {
-
         // esvazia a lista
+        for (int i = 0; i < len; i++) {
+            area[i] = null;
+        }
+
+        len = 0;
     }
 }

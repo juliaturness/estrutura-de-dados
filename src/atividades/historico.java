@@ -1,3 +1,5 @@
+package atividades;
+
 import esd.Deque;
 
 import java.util.Scanner;
@@ -21,8 +23,8 @@ public class historico {
             // switch utilizado para comparar os comandos
             switch (comando) {
 
-                case "historico":
-                    // se o comando for historico ent vai adicionar o comando
+                case "atividades.historico":
+                    // se o comando for atividades.historico ent vai adicionar o comando
                     // equanto o deque não estiver vazio ele vai extrair o final
                     // para que seja na ordem mais recente
                     entrada.adiciona(comando);

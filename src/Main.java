@@ -1,23 +1,23 @@
-import esd.Fila;
+
+import esd.ListaSequencialSimples;
 
 public class Main {
     public static void main(String[] args) {
-        // cria uma Fila com capacidade para armazenar 8 dados
-        Fila<String> q = new Fila<>();
+        // Cria uma lista de String
+        ListaSequencialSimples<String> lista = new ListaSequencialSimples<>();
 
-        // Enfileira algumas String na Fila ...
-        q.adiciona("banana");
-        q.adiciona("graviola");
-        q.adiciona("pitanga");
-        q.adiciona("sapoti");
-        q.adiciona("acerola");
-        q.adiciona("laranja");
+        // anexa algumas strings ...
+        lista.adiciona("4as2");
+        lista.adiciona("16sa");
+        lista.adiciona("15sas");
+        lista.adiciona("asa");
+        lista.adiciona("4");
 
-        // Enquanto fila não estiver vazia, mostra o valor na frente da fila e
-        // em seguida o desenfileira
-        while (! q.estaVazia()) {
-            System.out.printf("valor na frente da fila: %s\n", q.frente());
-            q.remove();
+        System.out.printf("Lista tem %d valores\n", lista.comprimento());
+
+        // itera a lista para mostrar as strings
+        for (int j=0; j < lista.comprimento(); j++) {
+            System.out.println(lista.obtem(j));
         }
     }
 }

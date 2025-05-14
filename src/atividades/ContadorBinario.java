@@ -1,3 +1,5 @@
+package atividades;
+
 import java.util.*;
 import java.util.Queue;
 import java.util.Scanner;

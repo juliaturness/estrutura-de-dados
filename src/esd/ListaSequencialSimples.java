@@ -19,11 +19,11 @@ public class ListaSequencialSimples <T> {
         T[] newArea = (T[]) new Object[len];
         for (int i =0; i < len; i++) {
             newArea[i] = area[i];
-//}
+        }
         area = newArea;
     }
 
-}
+
 
 
     public void expande() {

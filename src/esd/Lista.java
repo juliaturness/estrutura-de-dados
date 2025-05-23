@@ -1,29 +1,25 @@
 package esd;
 
 import java.security.InvalidParameterException;
+import java.util.Random;
 
-public class Lista <T> {
+public class Lista<T extends Comparable<T>> {
     class Node {
         T valor = null;
         Node proximo;
         Node antecessor;
 
-        // operações de Node
         Node() {
-            // este nodo deve inicialmente ser seu próprio sucessor e antecessor
             proximo = this;
             antecessor = this;
         }
 
         Node(T valor) {
-            // inicializa o nodo, que deve inicialmente ser seu próprio sucessor e antecessor
-            proximo = this;
-            antecessor = this;
+            this();
             this.valor = valor;
         }
 
         void conecta(Node sucessor) {
-            // insere este nodo antes de sucessor
             this.proximo = sucessor;
             this.antecessor = sucessor.antecessor;
             this.antecessor.proximo = this;
@@ -31,41 +27,158 @@ public class Lista <T> {
         }
 
         void desconecta() {
-            // desconecta este nodo, desfazendo as referências de seu antecessor e sucessor
             this.antecessor.proximo = this.proximo;
             this.proximo.antecessor = this.antecessor;
         }
-    };
 
-    Node guarda;
-    int len = 0;
+        T obtemValor() {
+            return valor;
+        }
 
-    // operações de Lista
+        Node obtemProximo() {
+            return proximo;
+        }
+    }
+
+    private Node guarda;
+    private int len = 0;
+
     public Lista() {
         guarda = new Node();
     }
 
-    public void adiciona(T valor){
-        Node nodo = new Node();
+    public void adiciona(T valor) {
+        Node nodo = new Node(valor);
         nodo.conecta(guarda);
         len++;
     }
 
-    public void insere(int indice, T valor){
-        if (indice < 0 || indice > len){
+    public void insere(int indice, T valor) {
+        if (indice < 0 || indice > len) {
             throw new InvalidParameterException("Indice invalido");
         }
-        Node nodo = new Node();
-        Node sucessor = obtem_nodo(indice);
+
+        Node nodo = new Node(valor);
+        Node sucessor = (indice == len) ? guarda : obtem_nodo(indice);
         nodo.conecta(sucessor);
         len++;
     }
 
-    //tem que ser node em vez de public
-     public void obtem_nodo(int indice){
+    public void remove(int indice) {
+        if (indice < 0 || indice >= len) {
+            throw new InvalidParameterException("ruim");
+        }
+        Node nodo = obtem_nodo(indice);
+        nodo.desconecta();
+        len--;
+    }
+
+    public void remove_ultimo() {
+        if (len == 0) return;
+        guarda.antecessor.desconecta();
+        len--;
+    }
+
+    public T obtem(int indice) {
+        return obtem_nodo(indice).valor;
+    }
+
+    public T obtem_primeiro() {
+        if (esta_vazia()) return null;
+        return guarda.proximo.valor;
+    }
+
+    public T obtem_ultimo() {
+        if (esta_vazia()) return null;
+        return guarda.antecessor.valor;
+    }
+
+    public int procura(T valor) {
         Node atual = guarda.proximo;
-        while(indice -- > 0){
+        int i = 0;
+        while (atual != guarda) {
+            if ((valor == null && atual.valor == null) || (valor != null && valor.equals(atual.valor))) {
+                return i;
+            }
+            atual = atual.proximo;
+            i++;
+        }
+        return -1;
+    }
+
+    public void substitui(int indice, T valor) {
+        Node nodo = obtem_nodo(indice);
+        nodo.valor = valor;
+    }
+
+    public int comprimento() {
+        return len;
+    }
+
+    public void limpa() {
+        guarda.proximo = guarda;
+        guarda.antecessor = guarda;
+        len = 0;
+    }
+
+    public void ordena() {
+        if (len <= 1) return;
+
+        boolean trocou;
+        do {
+            trocou = false;
+            Node atual = guarda.proximo;
+            while (atual.proximo != guarda) {
+                Node prox = atual.proximo;
+                if (atual.valor.compareTo(prox.valor) > 0) {
+                    T temp = atual.valor;
+                    atual.valor = prox.valor;
+                    prox.valor = temp;
+                    trocou = true;
+                }
+                atual = atual.proximo;
+            }
+        } while (trocou);
+    }
+
+    public void inverte() {
+        if (len <= 1) return;
+
+        Node atual = guarda;
+        do {
+            Node temp = atual.proximo;
+            atual.proximo = atual.antecessor;
+            atual.antecessor = temp;
+            atual = temp;
+        } while (atual != guarda);
+    }
+
+    public void embaralha() {
+        if (len <= 1) return;
+
+        Random rand = new Random();
+        for (int i = len - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            Node ni = obtem_nodo(i);
+            Node nj = obtem_nodo(j);
+            T temp = ni.valor;
+            ni.valor = nj.valor;
+            nj.valor = temp;
+        }
+    }
+
+    public boolean esta_vazia() {
+        return len == 0;
+    }
+
+    private Node obtem_nodo(int indice) {
+        if (indice < 0 || indice >= len) {
+            throw new InvalidParameterException("Índice fora dos limites");
+        }
+        Node atual = guarda.proximo;
+        for (int i = 0; i < indice; i++) {
             atual = atual.proximo;
         }
-     }
-};
+        return atual;
+    }
+}

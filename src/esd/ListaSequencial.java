@@ -139,4 +139,61 @@ public class ListaSequencial<T> {
 
         len = 0;
     }
+
+    public void ordena(){
+        if (len > 1){
+            ordena_mescla(0, len);
+        }
+    }
+
+    public void ordena_mescla(int pos1, int pos2){
+        if( pos2 - pos1 >1 ){
+            int meio = pos1 +(pos2 -pos1)/2;
+            ordena_mescla(pos1, meio);
+            ordena_mescla(meio, pos2);
+            mescla(meio, pos1, pos2);
+        }
+    }
+
+    public void mescla(int meio, int pos1, int pos2){
+        int tamanhoEsq = meio - pos1;
+        int tamanhoDir = pos2 - meio;
+
+        T[] esquerda = (T[]) new Object[tamanhoEsq];
+        T[] direita = (T[]) new Object[tamanhoDir];
+
+
+        for (int i = 0; i < tamanhoEsq; i++) {
+            esquerda[i] = area[pos1 + i];
+        }
+
+        for (int i = 0; i < tamanhoDir; i++) {
+            direita[i] = area[meio + i];
+        }
+        int i = 0, j = 0, k = pos1;
+
+
+        while (i < tamanhoEsq && j < tamanhoDir) {
+            Comparable<T> elemEsq = (Comparable<T>) esquerda[i];
+            T elemDir = (T) direita[j];
+            if (elemEsq.compareTo(elemDir) <= 0) {
+                area[k] = (T) esquerda[i];
+                i++;
+            } else {
+                area[k] = elemDir;
+                j++;
+            }
+            k++;
+        }
+
+        // Copia o restante da sublista esquerda, se houver
+        while (i < tamanhoEsq) {
+            area[k++] = (T) esquerda[i++];
+        }
+
+        // Copia o restante da sublista direita, se houver
+        while (j < tamanhoDir) {
+            area[k++] = (T) direita[j++];
+        }
+    }
 }

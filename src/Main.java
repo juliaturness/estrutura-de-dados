@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         ListaSequencial<Integer> lista = new ListaSequencial<>();
 
-        // Adicionando elementos fora de ordem
         lista.adiciona(5);
         lista.adiciona(3);
         lista.adiciona(3);

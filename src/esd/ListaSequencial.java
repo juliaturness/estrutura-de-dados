@@ -147,7 +147,7 @@ public class ListaSequencial<T> {
     }
 
     public void ordena_mescla(int pos1, int pos2){
-        if( pos2 - pos1 >1 ){
+        if( pos2 - pos1 > 1 ){
             int meio = pos1 +(pos2 -pos1)/2;
             ordena_mescla(pos1, meio);
             ordena_mescla(meio, pos2);
@@ -156,44 +156,41 @@ public class ListaSequencial<T> {
     }
 
     public void mescla(int meio, int pos1, int pos2){
-        int tamanhoEsq = meio - pos1;
-        int tamanhoDir = pos2 - meio;
 
-        T[] esquerda = (T[]) new Object[tamanhoEsq];
-        T[] direita = (T[]) new Object[tamanhoDir];
+        T[] aux = (T[]) new Object[pos2 - pos1];
 
+        int i1 = pos1;
+        int i2 = meio ;
+        int pos = 0 ;
 
-        for (int i = 0; i < tamanhoEsq; i++) {
-            esquerda[i] = area[pos1 + i];
-        }
-
-        for (int i = 0; i < tamanhoDir; i++) {
-            direita[i] = area[meio + i];
-        }
-        int i = 0, j = 0, k = pos1;
-
-
-        while (i < tamanhoEsq && j < tamanhoDir) {
-            Comparable<T> elemEsq = (Comparable<T>) esquerda[i];
-            T elemDir = (T) direita[j];
-            if (elemEsq.compareTo(elemDir) <= 0) {
-                area[k] = (T) esquerda[i];
-                i++;
+        while (i1 < pos && i2 < pos2) {
+            Comparable val = (Comparable)area[i1];
+            if (val.compareTo(area[i2]) < 0) {
+                aux[pos] = area[i1];
+                i1++;
             } else {
-                area[k] = elemDir;
-                j++;
+                aux[pos] = area[i2];
+                i2++;
             }
-            k++;
+            pos++;
         }
 
-        // Copia o restante da sublista esquerda, se houver
-        while (i < tamanhoEsq) {
-            area[k++] = (T) esquerda[i++];
+        while(i1 < meio){
+            aux[pos] = area[i1];
+            i1++;
+            pos++;
+        }
+        while(i2 < pos2){
+            aux[pos] = area[i2];
         }
 
-        // Copia o restante da sublista direita, se houver
-        while (j < tamanhoDir) {
-            area[k++] = (T) direita[j++];
+
+
+        for ( int index = 0 ;pos1 < pos2; index++, pos1++){
+            area[pos1] = aux[index];
         }
     }
 }
+
+
+

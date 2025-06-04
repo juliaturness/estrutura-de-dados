@@ -1,5 +1,7 @@
 package esd;
 
+import java.io.IOException;
+
 public class ListaSequencialOrdenada<T extends Comparable> {
 
     final int MinSubseqLen = 31;
@@ -134,4 +136,14 @@ public class ListaSequencialOrdenada<T extends Comparable> {
 
         return -1; // se não encontrar o valor, retorna -1
     }
+
+   public T maximo() {
+    if (esta_vazia()) throw new RuntimeException("Lista está vazia");
+    return obtem(len - 1); 
+}
+
+public T minimo() {
+    if (esta_vazia()) throw new RuntimeException("Lista está vazia");
+    return obtem(0); 
+}
 }

@@ -163,7 +163,7 @@ public class ListaSequencial<T> {
         int i2 = meio ;
         int pos = 0 ;
 
-        while (i1 < pos && i2 < pos2) {
+        while (i1 < meio && i2 < pos2) {
             Comparable val = (Comparable)area[i1];
             if (val.compareTo(area[i2]) < 0) {
                 aux[pos] = area[i1];
@@ -182,13 +182,16 @@ public class ListaSequencial<T> {
         }
         while(i2 < pos2){
             aux[pos] = area[i2];
+            i2++;
+            pos++;
         }
 
 
 
-        for ( int index = 0 ;pos1 < pos2; index++, pos1++){
-            area[pos1] = aux[index];
+        for (int i = 0; i < aux.length; i++) {
+            area[pos1 + i] = aux[i];
         }
+
     }
 }
 

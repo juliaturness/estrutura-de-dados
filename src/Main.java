@@ -1,8 +1,10 @@
-import esd.ListaSequencialSimples;
+
+import esd.ListaSequencial  ;
+
 
 public class Main {
     public static void main(String[] args) {
-        ListaSequencialSimples<Integer> lista = new ListaSequencialSimples<>();
+        ListaSequencial<Integer> lista = new ListaSequencial<>();
 
         lista.adiciona(5);
         lista.adiciona(3);
@@ -18,7 +20,6 @@ public class Main {
             System.out.print(lista.obtem(i) + " ");
         }
         System.out.println();
-        lista.embaralha();
 
         System.out.println("Lista após o embaralhamento:");
         for (int i = 0; i < lista.comprimento(); i++) {

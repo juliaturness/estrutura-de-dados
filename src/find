@@ -1,0 +1,38 @@
+import java.io.File;
+
+public class Find {
+
+    public static void main(String[] args) {
+
+        if (args.length != 2)
+            throw new RuntimeException("Uso: java Find <diretorio> <arquivo>");
+
+        File dir = new File(args[0]);
+
+        if (!dir.exists() || !dir.isDirectory())
+            throw new RuntimeException("Diretório inválido.");
+
+        String status = search(dir, args[1]);
+        System.out.println(status);
+    }
+
+    public static String search(File dir, String target) {
+
+        File[] list = dir.listFiles();
+        if (list == null) return "Arquivo não encontrado.";
+
+        for (File file : list) {
+
+            if (file.isFile() && file.getName().equals(target))
+                return file.getAbsolutePath();
+
+            if (file.isDirectory())
+                return search(file, target);
+
+        }
+
+        return "Arquivo não encontrado.";
+    }
+
+
+}

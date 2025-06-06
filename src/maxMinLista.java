@@ -9,6 +9,7 @@ public class maxMinLista{
         lista.insere(5);
         lista.insere(6);
         lista.insere(3);
+        lista.insere(11);
         lista.insere(10);
         lista.insere(1);
 

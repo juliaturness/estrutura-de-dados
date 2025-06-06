@@ -181,4 +181,20 @@ public class Lista<T extends Comparable<T>> {
         }
         return atual;
     }
+    public boolean esta_ordenada() {
+        if (len <= 1) {
+            return true;
+        }
+
+        Node atual = guarda.proximo;
+        while (atual.proximo != guarda) {
+            if (atual.valor.compareTo(atual.proximo.valor) > 0) {
+                return false;
+            }
+            atual = atual.proximo;
+        }
+        return true;
+    }
+
+
 }

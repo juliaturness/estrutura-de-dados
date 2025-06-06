@@ -6,7 +6,7 @@ import esd.ListaSequencialOrdenada;
 
 public class contadoDePalavras {
      public static void main(String[] args) {
-        String arquivo = "src/atividades/teste.txt"; // ou use args[0] se quiser via linha de comando
+        String arquivo = args[0];
         try {
             contando(arquivo);
         } catch (IOException e) {
@@ -19,31 +19,40 @@ public class contadoDePalavras {
 
         try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha;
-        
-         while ((linha = br.readLine()) != null) {
-                String[] palavras = linha.split(" ");
+
+            while ((linha = br.readLine()) != null) {
+                String[] palavras = linha.split("\\s+");
 
                 for (String palavra : palavras) {
-                    palavra = palavra.trim();
-                    boolean achou = false;
-                
-                    for (int i = 0; i < lista.comprimento(); i++) {
-                        PalavraFrequente p = lista.obtem(i);
-                        if (p.getPalavra().equals(palavra)) {
-                            p.incrementar();
-                            achou = true;
-                            break;
-                        }
-                    }
+                    palavra = palavra.replaceAll("[^\\p{L}]", "").toLowerCase().trim();
 
-                    if (!achou) {
-                        lista.insere(new PalavraFrequente(palavra));
+                    if (!palavra.isEmpty()) {
+                        boolean achou = false;
+
+                        for (int i = 0; i < lista.comprimento(); i++) {
+                            PalavraFrequente p = lista.obtem(i);
+                            if (p.getPalavra().equals(palavra)) {
+                                lista.remove(lista.obtem(i));
+                                p.incrementar();
+                                lista.insere(p);
+                                achou = true;
+                                break;
+                            }
+                        }
+
+                        if (!achou) {
+                            lista.insere(new PalavraFrequente(palavra));
+                        }
                     }
                 }
             }
         }
+        for (int i = 0; i < lista.comprimento(); i++) {
+            PalavraFrequente p = lista.obtem(i);
+            System.out.println(p);
+        }
     }
-            
+
 
     public static class PalavraFrequente implements Comparable<PalavraFrequente> {
     private String palavra;

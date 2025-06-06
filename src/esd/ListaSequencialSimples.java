@@ -1,6 +1,8 @@
 package esd;
 
 
+import java.util.Random;
+
 public class ListaSequencialSimples <T> {
 
     T[] area;
@@ -23,9 +25,6 @@ public class ListaSequencialSimples <T> {
         area = newArea;
     }
 
-
-
-
     public void expande() {
         // expande a capacidade da lista: nova capacidade deve ser o dobro da atual
         expande(2*area.length);
@@ -43,7 +42,7 @@ public class ListaSequencialSimples <T> {
         if (len == area.length){
             expande();
         }
-        area[fim] = elemento;
+        area[len] = elemento;
         len ++;
 
     }
@@ -104,4 +103,19 @@ public class ListaSequencialSimples <T> {
 
         len = 0;
     }
+
+    public void embaralha() {
+        if (len > 1) {
+
+            Random gerador = new Random();
+
+            for (int i = len - 1; i > 0; i--) {
+                int j = gerador.nextInt(i + 1);
+                T temp = area[i];
+                area[i] = area[j];
+                area[j] = temp;
+            }
+        }
+    }
+
 }

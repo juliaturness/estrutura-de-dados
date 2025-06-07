@@ -31,6 +31,16 @@ public class ComparaPalavras {
         ListaSequencialSimples<String> palavrasArquivo1 = lerArquivo(caminho1);
         ListaSequencialSimples<String> palavrasArquivo2 = lerArquivo(caminho2);
 
+        boolean existe = false;
+
+        for (int i = 0; i < palavrasArquivo1.comprimento(); i++) {
+            String palavra = palavrasArquivo1.obtem(i);
+            if (palavra.contains(palavrasArquivo2.toString().trim())) {
+                existe = true;
+                break;
+            }
+        }
+
         return palavrasArquivo1.equals(palavrasArquivo2);
     }
 

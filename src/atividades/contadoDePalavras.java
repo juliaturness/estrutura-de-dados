@@ -1,3 +1,5 @@
+package atividades;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -55,8 +57,8 @@ public class contadoDePalavras {
 
 
     public static class PalavraFrequente implements Comparable<PalavraFrequente> {
-    private String palavra;
-    private int frequencia;
+    public String palavra;
+    public int frequencia;
 
     public PalavraFrequente(String palavra) {
         this.palavra = palavra.toLowerCase();

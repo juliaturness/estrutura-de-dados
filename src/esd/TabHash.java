@@ -49,8 +49,8 @@ public class TabHash <K, V>{
     public void contem(K chave ){
 
     }
-    public void esta_vazia(){
-
+    public boolean esta_vazia(){
+        return tab.esta_vazia();
     }
 
     public V obten_ou_default(K chave, V defval){

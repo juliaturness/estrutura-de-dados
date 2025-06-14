@@ -16,8 +16,9 @@ public class Par<K, V>{
         return valor;
     }
 
-    public K temChave(){
-        return chave;
+    public boolean temChave(K chave){
+
+        return false;
     }
 
 

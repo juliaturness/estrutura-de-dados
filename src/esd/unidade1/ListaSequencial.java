@@ -1,4 +1,4 @@
-package esd;
+package esd.unidade1;
 
 public class ListaSequencial<T> {
     T[] area; // vetor que armazena os elementos

@@ -1,6 +1,6 @@
 package atividades;
 
-import esd.Fila;
+import esd.unidade1.Fila;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

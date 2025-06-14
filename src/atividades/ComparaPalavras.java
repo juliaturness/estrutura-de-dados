@@ -3,7 +3,7 @@ package atividades;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import esd.ListaSequencialSimples;
+import esd.unidade1.ListaSequencialSimples;
 
 public class ComparaPalavras {
 

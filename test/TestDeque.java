@@ -1,7 +1,6 @@
-import esd.Deque;
+import esd.unidade1.Deque;
 import org.junit.jupiter.api.DisplayName;
 // import org.junit.jupiter.api.Timeout;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.IntegerConversion;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

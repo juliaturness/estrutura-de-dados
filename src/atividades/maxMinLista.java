@@ -1,6 +1,6 @@
 package atividades;
 
-import esd.ListaSequencialOrdenada;
+import esd.unidade1.ListaSequencialOrdenada;
 
 public class maxMinLista{
 

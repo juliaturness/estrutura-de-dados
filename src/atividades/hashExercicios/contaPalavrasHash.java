@@ -1,4 +1,4 @@
-package hashExercicios;
+package atividades.hashExercicios;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

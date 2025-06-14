@@ -1,6 +1,4 @@
-package esd;
-
-import java.io.IOException;
+package esd.unidade1;
 
 public class ListaSequencialOrdenada<T extends Comparable> {
 

@@ -1,9 +1,7 @@
-import esd.ListaSequencial;
-import esd.ListaSequencialOrdenada;
+import esd.unidade1.ListaSequencialOrdenada;
 import org.junit.jupiter.api.DisplayName;
 
 import java.io.IOException;
-import java.security.InvalidParameterException;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;

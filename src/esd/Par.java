@@ -12,6 +12,10 @@ public class Par<K, V>{
         return chave;
     }
 
+//    public obtem_par(chave){
+//
+//    }
+
     public V obtemValor(){
         return valor;
     }

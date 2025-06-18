@@ -16,7 +16,7 @@ public class TabHash <K, V>{
 
 
     public void obtem(K chave){
-
+// partir do que o adicona faz, procura o par na linha, se encontrar retorna o valor, se n encontrar diz q a chave n existe
     }
     public void adiciona (K chave, V valor){
      int hash = chave.hashCode() % tab.comprimento();

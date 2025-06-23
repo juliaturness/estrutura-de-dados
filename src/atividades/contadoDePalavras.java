@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import esd.unidade1.ListaSequencialOrdenada;
+import esd.ListaSequencialOrdenada;
 
 public class contadoDePalavras {
      public static void main(String[] args) {

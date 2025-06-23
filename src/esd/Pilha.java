@@ -1,4 +1,4 @@
-package esd.unidade1;
+package esd;
 
 public class Pilha <T> {
     T[] mem; // a área de armazenamento

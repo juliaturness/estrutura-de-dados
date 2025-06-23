@@ -1,6 +1,6 @@
 package atividades;
 
-import esd.unidade1.Deque;
+import esd.Deque;
 
 import java.io.FileReader;
 import java.io.BufferedReader;

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import esd.unidade1.ListaSequencial;
+import esd.ListaSequencial;
 
 public class ConsultaMatricula {
 

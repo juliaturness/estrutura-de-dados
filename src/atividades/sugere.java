@@ -1,6 +1,6 @@
 package atividades;
 
-import esd.unidade1.ListaSimples;
+import esd.ListaSimples;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

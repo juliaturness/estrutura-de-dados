@@ -1,4 +1,4 @@
-package esd.unidade1;
+package esd;
 
 import java.security.InvalidParameterException;
 import java.util.Random;
@@ -173,7 +173,7 @@ public class Lista<T extends Comparable<T>> {
 
     private Node obtem_nodo(int indice) {
         if (indice < 0 || indice >= len) {
-            throw new InvalidParameterException("Índice fora dos limites");
+            throw new InvalidParameterException("indice fora dos limites");
         }
         Node atual = guarda.proximo;
         for (int i = 0; i < indice; i++) {

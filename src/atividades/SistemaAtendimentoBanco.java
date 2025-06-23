@@ -1,7 +1,7 @@
 package atividades;
 
 import java.util.Scanner;
-import esd.unidade1.ListaSimples;
+import esd.ListaSimples;
 
 public class SistemaAtendimentoBanco {
 

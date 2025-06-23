@@ -1,4 +1,4 @@
-import esd.unidade1.ListaSequencialOrdenada;
+import esd.ListaSequencialOrdenada;
 import org.junit.jupiter.api.DisplayName;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package esd.unidade1;
+package esd;
 
 public class ListaSequencialOrdenada<T extends Comparable> {
 

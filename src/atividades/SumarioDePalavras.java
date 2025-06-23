@@ -1,6 +1,6 @@
 package atividades;
 
-import esd.unidade1.Fila;  // Sua implementação da Fila
+import esd.Fila;  // Sua implementação da Fila
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

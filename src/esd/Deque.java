@@ -1,4 +1,4 @@
-package esd.unidade1;
+package esd;
 //extrai_final: extrai um dado do final
 //extrai_inicio: extrai do início
 //acessa: acessa um dado de uma posição qualquer

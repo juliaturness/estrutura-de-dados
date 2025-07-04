@@ -48,8 +48,21 @@ public class APB <T extends Comparable> {
 
     // Procura um valor e retorna o nodo correspondente
     public T procura(T val) {
+        NodoAPB atual = raiz;
+        
+        while (atual!= null) {
+            int cmp = val.compareTo(atual.valor);
+            if (cmp == 0) {
+                return atual.valor;
+            } else if (cmp < 0) {
+                atual = atual.esq;
+            } else {
+                atual = atual.dir;
+            }
+        }
         return null;
     }
+
 
     // Remove um valor da árvore
     public void remove(T val) {

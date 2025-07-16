@@ -73,18 +73,18 @@ public class APB <T extends Comparable> {
         return raiz != null ? raiz.valor : null;
     }
 
-    public void listeInOrder() {
+    public void emOrdem() {
         // Implementação futura (listagem em-ordem)
     }
 
-    public void listePreOrder() {
+    public void preOrdem() {
 
     }
 
-    public void listePostOrder() {
+    public void posOrdem() {
     }
 
-    public void listeEmLargura() {
+    public void EmLargura() {
     }
 
     // Retorna o menor valor
@@ -98,21 +98,21 @@ public class APB <T extends Comparable> {
     }
 
     // Retorna o maior valor menor que um dado
-    public T menorQue(T val) {
+    public T menor_que(T val) {
         return null;
     }
 
     // Retorna o menor valor maior que um dado
-    public T maiorQue(T val) {
+    public T maior_que(T val) {
         return null;
     }
 
     // Lista de valores menores que um dado
-    public void menoresQue(T val) {
+    public void menores_que(T val) {
     }
 
     // Lista de valores maiores que um dado
-    public void maioresQue(T val) {
+    public void maiores_que(T val) {
     }
 
     // Altura da árvore

@@ -1,0 +1,1000 @@
+eu,4
+chave de fenda,3
+lubrificante,2
+vassoura,1
+parafuso,4
+papel sulfite,5
+pÃ¡,4
+papel sulfite,4
+pneu,5
+lÃ¡pis,4
+chave de fenda,4
+chave de fenda,4
+picareta,4
+martelo,5
+martelo,3
+parafuso,1
+vassoura,1
+pote de vidro,0
+lubrificante,0
+conjunto de caixas plÃ¡sticas,0
+pote de vidro,5
+prego,2
+parafuso,5
+vassoura,5
+caneta BIC,4
+parafuso,3
+picareta,3
+solvente,4
+pneu,2
+martelo,4
+conjunto de caixas plÃ¡sticas,3
+papel sulfite,1
+pote de vidro,2
+chave de fenda,4
+conjunto de caixas plÃ¡sticas,1
+solvente,2
+picareta,0
+vassoura,3
+pneu,4
+papel sulfite,5
+prego,0
+pneu,3
+conjunto de caixas plÃ¡sticas,2
+parafuso,4
+prego,4
+parafuso,4
+pote de vidro,0
+papel sulfite,1
+pneu,1
+picareta,3
+pote de vidro,0
+pote de vidro,2
+lubrificante,0
+conjunto de caixas plÃ¡sticas,2
+pneu,2
+pote de vidro,0
+lÃ¡pis,3
+chave de fenda,3
+caneta BIC,3
+solvente,2
+conjunto de caixas plÃ¡sticas,3
+parafuso,0
+solvente,4
+martelo,0
+martelo,5
+caneta BIC,5
+chave de fenda,2
+papel sulfite,5
+lubrificante,2
+vassoura,3
+vassoura,5
+conjunto de caixas plÃ¡sticas,1
+papel sulfite,3
+chave de fenda,2
+caneta BIC,3
+pÃ¡,4
+caneta BIC,0
+pÃ¡,0
+vassoura,2
+vassoura,5
+lubrificante,3
+prego,1
+solvente,0
+lubrificante,5
+caneta BIC,5
+chave de fenda,1
+lÃ¡pis,2
+parafuso,3
+papel sulfite,4
+prego,0
+conjunto de caixas plÃ¡sticas,2
+pneu,0
+lÃ¡pis,4
+solvente,2
+caneta BIC,2
+pneu,4
+prego,2
+lubrificante,0
+caneta BIC,2
+prego,5
+caneta BIC,1
+pneu,1
+martelo,2
+chave de fenda,1
+lubrificante,2
+parafuso,4
+lubrificante,4
+conjunto de caixas plÃ¡sticas,1
+vassoura,2
+lubrificante,5
+pÃ¡,3
+lubrificante,3
+pote de vidro,5
+solvente,5
+pneu,4
+conjunto de caixas plÃ¡sticas,1
+picareta,2
+chave de fenda,3
+caneta BIC,1
+chave de fenda,3
+picareta,3
+pÃ¡,1
+lubrificante,2
+lubrificante,5
+papel sulfite,0
+lÃ¡pis,5
+parafuso,3
+conjunto de caixas plÃ¡sticas,0
+vassoura,1
+chave de fenda,5
+lubrificante,4
+solvente,5
+conjunto de caixas plÃ¡sticas,3
+parafuso,1
+parafuso,1
+papel sulfite,5
+vassoura,2
+picareta,3
+solvente,2
+martelo,5
+martelo,2
+pneu,1
+lÃ¡pis,3
+pneu,5
+papel sulfite,5
+pote de vidro,5
+picareta,5
+vassoura,3
+chave de fenda,3
+lubrificante,4
+papel sulfite,0
+picareta,4
+pÃ¡,5
+papel sulfite,3
+pÃ¡,2
+chave de fenda,0
+lubrificante,4
+lÃ¡pis,3
+picareta,5
+papel sulfite,0
+prego,5
+solvente,0
+chave de fenda,5
+picareta,1
+prego,0
+lÃ¡pis,2
+pneu,3
+prego,1
+conjunto de caixas plÃ¡sticas,1
+papel sulfite,1
+vassoura,2
+parafuso,1
+picareta,5
+solvente,0
+papel sulfite,0
+picareta,3
+pote de vidro,3
+picareta,5
+picareta,1
+pÃ¡,0
+martelo,4
+vassoura,2
+caneta BIC,3
+pneu,0
+pneu,5
+conjunto de caixas plÃ¡sticas,5
+parafuso,0
+solvente,1
+parafuso,3
+picareta,0
+pÃ¡,4
+chave de fenda,0
+pneu,5
+chave de fenda,3
+picareta,1
+prego,3
+pote de vidro,5
+conjunto de caixas plÃ¡sticas,2
+pÃ¡,3
+chave de fenda,3
+pÃ¡,1
+parafuso,0
+conjunto de caixas plÃ¡sticas,2
+solvente,1
+pÃ¡,2
+pÃ¡,5
+pneu,2
+caneta BIC,2
+pneu,5
+conjunto de caixas plÃ¡sticas,5
+pote de vidro,4
+chave de fenda,0
+solvente,3
+conjunto de caixas plÃ¡sticas,3
+vassoura,3
+vassoura,4
+parafuso,4
+vassoura,2
+pneu,5
+parafuso,5
+conjunto de caixas plÃ¡sticas,3
+prego,5
+prego,0
+pneu,3
+caneta BIC,3
+prego,3
+caneta BIC,4
+pÃ¡,2
+martelo,1
+pneu,5
+lÃ¡pis,5
+picareta,1
+chave de fenda,4
+lÃ¡pis,3
+pneu,3
+lubrificante,5
+lubrificante,4
+vassoura,0
+prego,3
+lÃ¡pis,4
+caneta BIC,5
+martelo,4
+pneu,2
+pote de vidro,3
+chave de fenda,1
+pote de vidro,3
+pÃ¡,3
+pote de vidro,0
+caneta BIC,4
+solvente,2
+parafuso,2
+lubrificante,2
+vassoura,5
+pote de vidro,5
+pote de vidro,2
+martelo,3
+parafuso,3
+solvente,0
+lÃ¡pis,2
+lubrificante,4
+caneta BIC,2
+picareta,3
+papel sulfite,5
+picareta,0
+conjunto de caixas plÃ¡sticas,3
+pneu,2
+prego,5
+parafuso,0
+parafuso,0
+caneta BIC,4
+martelo,1
+lubrificante,0
+solvente,0
+lubrificante,1
+chave de fenda,2
+vassoura,1
+prego,0
+vassoura,0
+lÃ¡pis,4
+lÃ¡pis,4
+lubrificante,4
+martelo,3
+parafuso,4
+lÃ¡pis,4
+solvente,4
+parafuso,2
+pneu,2
+solvente,2
+pneu,4
+martelo,0
+conjunto de caixas plÃ¡sticas,0
+martelo,5
+parafuso,5
+solvente,4
+caneta BIC,3
+caneta BIC,1
+pneu,4
+pneu,5
+lubrificante,5
+conjunto de caixas plÃ¡sticas,5
+vassoura,5
+parafuso,5
+vassoura,1
+solvente,3
+vassoura,3
+solvente,4
+pote de vidro,0
+martelo,0
+papel sulfite,3
+pÃ¡,4
+chave de fenda,3
+vassoura,3
+prego,0
+pote de vidro,4
+martelo,5
+pote de vidro,4
+pneu,1
+martelo,1
+lubrificante,1
+parafuso,4
+parafuso,4
+pote de vidro,4
+lÃ¡pis,3
+lÃ¡pis,0
+lubrificante,0
+parafuso,0
+chave de fenda,1
+pote de vidro,1
+solvente,5
+lubrificante,4
+lÃ¡pis,1
+papel sulfite,3
+vassoura,3
+parafuso,3
+vassoura,1
+solvente,1
+lubrificante,5
+solvente,2
+prego,1
+lÃ¡pis,2
+pneu,1
+caneta BIC,1
+vassoura,4
+vassoura,3
+pneu,3
+papel sulfite,5
+vassoura,1
+prego,0
+papel sulfite,4
+prego,1
+chave de fenda,0
+chave de fenda,0
+papel sulfite,4
+conjunto de caixas plÃ¡sticas,1
+lubrificante,3
+parafuso,1
+martelo,1
+prego,0
+parafuso,4
+pote de vidro,3
+vassoura,3
+chave de fenda,0
+prego,1
+caneta BIC,3
+caneta BIC,0
+martelo,0
+picareta,3
+chave de fenda,5
+solvente,0
+lubrificante,1
+conjunto de caixas plÃ¡sticas,0
+pÃ¡,3
+lÃ¡pis,2
+conjunto de caixas plÃ¡sticas,1
+papel sulfite,5
+martelo,3
+pÃ¡,5
+parafuso,4
+picareta,3
+caneta BIC,4
+martelo,0
+lubrificante,2
+chave de fenda,4
+pÃ¡,0
+papel sulfite,5
+pneu,2
+conjunto de caixas plÃ¡sticas,3
+martelo,4
+martelo,2
+vassoura,0
+solvente,5
+picareta,1
+lÃ¡pis,3
+lÃ¡pis,1
+parafuso,0
+conjunto de caixas plÃ¡sticas,2
+lubrificante,1
+conjunto de caixas plÃ¡sticas,3
+papel sulfite,3
+solvente,4
+lubrificante,5
+prego,0
+lubrificante,2
+prego,3
+prego,0
+martelo,5
+pote de vidro,0
+prego,2
+parafuso,3
+pÃ¡,5
+solvente,1
+caneta BIC,3
+picareta,5
+pneu,3
+vassoura,0
+lubrificante,0
+pote de vidro,3
+lÃ¡pis,3
+parafuso,1
+lubrificante,4
+picareta,4
+conjunto de caixas plÃ¡sticas,5
+solvente,5
+papel sulfite,0
+pneu,2
+prego,1
+lubrificante,0
+pÃ¡,4
+papel sulfite,4
+caneta BIC,3
+pÃ¡,0
+parafuso,5
+pneu,0
+solvente,2
+pote de vidro,5
+papel sulfite,5
+pÃ¡,2
+prego,5
+prego,1
+chave de fenda,4
+pÃ¡,4
+caneta BIC,1
+pote de vidro,2
+lÃ¡pis,2
+vassoura,1
+papel sulfite,1
+lÃ¡pis,1
+martelo,0
+conjunto de caixas plÃ¡sticas,5
+lÃ¡pis,4
+martelo,1
+vassoura,3
+pÃ¡,4
+solvente,4
+prego,3
+chave de fenda,0
+conjunto de caixas plÃ¡sticas,0
+parafuso,2
+conjunto de caixas plÃ¡sticas,4
+solvente,0
+solvente,5
+parafuso,0
+parafuso,3
+lubrificante,1
+chave de fenda,5
+pneu,4
+caneta BIC,1
+pote de vidro,2
+caneta BIC,2
+papel sulfite,1
+chave de fenda,3
+pote de vidro,5
+lÃ¡pis,0
+caneta BIC,1
+solvente,2
+conjunto de caixas plÃ¡sticas,0
+prego,2
+conjunto de caixas plÃ¡sticas,3
+pneu,1
+vassoura,0
+solvente,5
+picareta,1
+conjunto de caixas plÃ¡sticas,0
+lubrificante,1
+lÃ¡pis,1
+prego,4
+pneu,0
+prego,2
+pÃ¡,2
+lÃ¡pis,1
+pote de vidro,1
+lubrificante,3
+caneta BIC,5
+pote de vidro,5
+lubrificante,1
+lÃ¡pis,5
+lÃ¡pis,3
+lÃ¡pis,2
+lÃ¡pis,3
+pote de vidro,1
+pneu,3
+pÃ¡,5
+caneta BIC,3
+solvente,5
+lubrificante,5
+chave de fenda,5
+parafuso,3
+martelo,4
+picareta,1
+papel sulfite,3
+martelo,1
+conjunto de caixas plÃ¡sticas,4
+lubrificante,5
+lÃ¡pis,0
+vassoura,2
+pote de vidro,5
+lÃ¡pis,1
+martelo,0
+caneta BIC,0
+caneta BIC,4
+picareta,3
+papel sulfite,4
+lÃ¡pis,0
+papel sulfite,5
+pneu,4
+lubrificante,0
+pÃ¡,4
+pote de vidro,1
+picareta,4
+conjunto de caixas plÃ¡sticas,5
+parafuso,1
+lubrificante,2
+vassoura,3
+pÃ¡,4
+papel sulfite,3
+vassoura,5
+caneta BIC,5
+caneta BIC,4
+lubrificante,0
+solvente,3
+lubrificante,3
+papel sulfite,5
+conjunto de caixas plÃ¡sticas,3
+conjunto de caixas plÃ¡sticas,3
+conjunto de caixas plÃ¡sticas,2
+chave de fenda,3
+pote de vidro,0
+vassoura,0
+prego,2
+pote de vidro,2
+prego,5
+lubrificante,4
+caneta BIC,4
+martelo,1
+pote de vidro,1
+caneta BIC,2
+vassoura,2
+papel sulfite,5
+papel sulfite,0
+papel sulfite,5
+vassoura,0
+lÃ¡pis,2
+picareta,3
+parafuso,1
+lubrificante,1
+papel sulfite,5
+chave de fenda,0
+vassoura,3
+pÃ¡,1
+vassoura,0
+pote de vidro,2
+pote de vidro,3
+pneu,3
+pÃ¡,4
+martelo,3
+martelo,5
+chave de fenda,2
+parafuso,2
+solvente,1
+pneu,0
+pneu,1
+papel sulfite,0
+chave de fenda,5
+prego,0
+martelo,5
+chave de fenda,0
+conjunto de caixas plÃ¡sticas,1
+pÃ¡,1
+pote de vidro,0
+pote de vidro,2
+martelo,5
+pote de vidro,2
+lubrificante,2
+martelo,0
+parafuso,0
+lubrificante,0
+caneta BIC,3
+lubrificante,2
+chave de fenda,0
+parafuso,0
+chave de fenda,1
+conjunto de caixas plÃ¡sticas,4
+picareta,2
+picareta,2
+martelo,4
+caneta BIC,4
+pÃ¡,0
+pote de vidro,3
+chave de fenda,0
+vassoura,1
+pote de vidro,4
+pÃ¡,2
+martelo,1
+picareta,4
+vassoura,0
+chave de fenda,2
+martelo,5
+pote de vidro,1
+pÃ¡,0
+pneu,4
+vassoura,0
+solvente,2
+picareta,2
+parafuso,1
+solvente,3
+caneta BIC,1
+prego,0
+pneu,3
+pneu,2
+picareta,4
+martelo,4
+picareta,1
+parafuso,1
+parafuso,3
+parafuso,5
+solvente,1
+conjunto de caixas plÃ¡sticas,4
+martelo,2
+picareta,4
+pneu,4
+parafuso,4
+martelo,0
+prego,1
+conjunto de caixas plÃ¡sticas,5
+martelo,1
+caneta BIC,3
+papel sulfite,3
+picareta,5
+chave de fenda,3
+papel sulfite,2
+lubrificante,3
+pneu,3
+pneu,2
+chave de fenda,5
+martelo,1
+conjunto de caixas plÃ¡sticas,3
+conjunto de caixas plÃ¡sticas,1
+chave de fenda,1
+vassoura,5
+lÃ¡pis,1
+vassoura,0
+pneu,4
+prego,0
+lubrificante,4
+lÃ¡pis,0
+prego,3
+solvente,2
+parafuso,4
+vassoura,1
+lubrificante,1
+picareta,3
+papel sulfite,0
+pote de vidro,4
+vassoura,2
+solvente,1
+lÃ¡pis,4
+prego,0
+papel sulfite,3
+prego,0
+papel sulfite,5
+pÃ¡,0
+lÃ¡pis,3
+solvente,4
+pÃ¡,3
+vassoura,1
+chave de fenda,0
+prego,2
+solvente,2
+pote de vidro,1
+parafuso,4
+chave de fenda,0
+conjunto de caixas plÃ¡sticas,0
+lÃ¡pis,0
+vassoura,3
+parafuso,2
+pneu,5
+pneu,0
+lubrificante,5
+caneta BIC,0
+parafuso,5
+caneta BIC,4
+caneta BIC,4
+parafuso,3
+pÃ¡,5
+papel sulfite,5
+papel sulfite,3
+pneu,5
+pote de vidro,3
+vassoura,2
+parafuso,4
+caneta BIC,0
+pÃ¡,1
+picareta,0
+vassoura,4
+lÃ¡pis,3
+parafuso,5
+vassoura,5
+parafuso,0
+papel sulfite,4
+picareta,2
+solvente,5
+conjunto de caixas plÃ¡sticas,3
+lÃ¡pis,5
+papel sulfite,0
+chave de fenda,4
+lÃ¡pis,2
+vassoura,3
+pÃ¡,3
+pneu,2
+pote de vidro,4
+prego,0
+vassoura,1
+lubrificante,4
+pÃ¡,3
+chave de fenda,0
+caneta BIC,1
+parafuso,2
+solvente,3
+lÃ¡pis,1
+chave de fenda,2
+vassoura,2
+lÃ¡pis,2
+prego,5
+chave de fenda,4
+caneta BIC,0
+pneu,0
+lÃ¡pis,3
+conjunto de caixas plÃ¡sticas,1
+parafuso,3
+conjunto de caixas plÃ¡sticas,0
+lÃ¡pis,3
+conjunto de caixas plÃ¡sticas,0
+parafuso,5
+pÃ¡,4
+conjunto de caixas plÃ¡sticas,4
+pÃ¡,5
+picareta,0
+caneta BIC,3
+papel sulfite,4
+papel sulfite,4
+prego,3
+solvente,0
+lÃ¡pis,2
+parafuso,3
+pÃ¡,0
+conjunto de caixas plÃ¡sticas,4
+vassoura,5
+chave de fenda,4
+pote de vidro,5
+lubrificante,2
+solvente,4
+pneu,4
+chave de fenda,2
+papel sulfite,5
+parafuso,1
+chave de fenda,4
+chave de fenda,0
+picareta,5
+lÃ¡pis,5
+pote de vidro,4
+vassoura,4
+martelo,0
+pote de vidro,4
+papel sulfite,4
+pneu,4
+pÃ¡,5
+solvente,4
+parafuso,4
+lÃ¡pis,1
+prego,4
+papel sulfite,3
+lÃ¡pis,4
+lubrificante,2
+chave de fenda,1
+picareta,1
+lubrificante,5
+lÃ¡pis,1
+lÃ¡pis,2
+caneta BIC,4
+prego,4
+picareta,3
+parafuso,3
+martelo,2
+picareta,4
+prego,1
+papel sulfite,2
+caneta BIC,1
+prego,3
+lubrificante,5
+pneu,0
+lÃ¡pis,4
+prego,2
+pote de vidro,4
+solvente,1
+parafuso,4
+lÃ¡pis,3
+pote de vidro,1
+caneta BIC,1
+pneu,2
+vassoura,2
+solvente,2
+caneta BIC,4
+pote de vidro,4
+vassoura,3
+pote de vidro,3
+pneu,1
+lÃ¡pis,4
+lubrificante,2
+papel sulfite,4
+caneta BIC,5
+lubrificante,0
+chave de fenda,2
+picareta,5
+vassoura,0
+solvente,5
+conjunto de caixas plÃ¡sticas,4
+pÃ¡,0
+parafuso,3
+prego,2
+picareta,1
+pneu,3
+lÃ¡pis,4
+vassoura,3
+lÃ¡pis,0
+pneu,3
+caneta BIC,3
+prego,2
+parafuso,5
+pÃ¡,0
+solvente,4
+caneta BIC,0
+vassoura,4
+pÃ¡,4
+solvente,4
+picareta,0
+martelo,1
+solvente,0
+lubrificante,3
+pÃ¡,3
+solvente,2
+conjunto de caixas plÃ¡sticas,3
+caneta BIC,5
+picareta,3
+chave de fenda,4
+pneu,4
+lubrificante,4
+caneta BIC,4
+pÃ¡,5
+chave de fenda,5
+solvente,1
+solvente,2
+chave de fenda,4
+vassoura,2
+papel sulfite,4
+caneta BIC,0
+lÃ¡pis,4
+picareta,3
+parafuso,4
+picareta,2
+chave de fenda,1
+lubrificante,1
+papel sulfite,5
+pote de vidro,3
+chave de fenda,4
+pneu,3
+pÃ¡,4
+prego,4
+parafuso,3
+martelo,1
+picareta,4
+caneta BIC,2
+lÃ¡pis,3
+chave de fenda,4
+conjunto de caixas plÃ¡sticas,5
+martelo,0
+pneu,3
+pneu,5
+parafuso,1
+pneu,1
+pote de vidro,3
+parafuso,3
+chave de fenda,0
+parafuso,2
+papel sulfite,0
+caneta BIC,2
+picareta,2
+vassoura,5
+solvente,1
+parafuso,0
+picareta,5
+prego,3
+conjunto de caixas plÃ¡sticas,5
+pÃ¡,3
+martelo,3
+conjunto de caixas plÃ¡sticas,2
+conjunto de caixas plÃ¡sticas,5
+vassoura,1
+caneta BIC,2
+prego,2
+prego,5
+picareta,1
+prego,3
+solvente,1
+picareta,1
+picareta,0
+pneu,0
+pneu,4
+caneta BIC,5
+chave de fenda,5
+pote de vidro,2
+prego,2
+vassoura,0
+prego,0
+pÃ¡,2
+martelo,1
+chave de fenda,1
+prego,1
+parafuso,1
+vassoura,0
+picareta,2
+parafuso,2
+picareta,1
+conjunto de caixas plÃ¡sticas,2
+papel sulfite,2
+caneta BIC,5
+picareta,3
+pote de vidro,4
+caneta BIC,0
+caneta BIC,4
+martelo,4
+papel sulfite,1
+caneta BIC,5
+caneta BIC,0
+prego,1
+parafuso,1
+pneu,3
+conjunto de caixas plÃ¡sticas,2
+vassoura,5
+papel sulfite,1
+vassoura,4
+vassoura,3
+picareta,3
+prego,4
+pÃ¡,4
+lÃ¡pis,1
+prego,1
+papel sulfite,1
+picareta,1
+lubrificante,4
+caneta BIC,2
+pneu,3
+lubrificante,1
+pote de vidro,4
+caneta BIC,4
+pÃ¡,2
+caneta BIC,5
+prego,4
+picareta,1
+vassoura,2
+lÃ¡pis,4
+pote de vidro,3
+pote de vidro,4
+vassoura,1
+solvente,5
+solvente,1
+martelo,1
+vassoura,5
+pÃ¡,0
+picareta,4
+lubrificante,2
+conjunto de caixas plÃ¡sticas,2
+solvente,4
+pote de vidro,1
+vassoura,2
+prego,0
+caneta BIC,5
+vassoura,1
+prego,5
+conjunto de caixas plÃ¡sticas,4
+martelo,2

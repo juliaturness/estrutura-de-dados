@@ -193,6 +193,24 @@ public class ListaSequencial<T> {
         }
 
     }
+
+    @Override
+    public String toString() {
+        if (len == 0) {
+            return "[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < len; i++) {
+            sb.append(area[i]);
+            if (i < len - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
 
 

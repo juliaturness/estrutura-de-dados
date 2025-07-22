@@ -62,8 +62,53 @@ public class APB<T extends Comparable> {
     }
 
     // Remove um valor da árvore
-    public void remove(T val) {
+    public T remove(T val) {
+        NodoAPB nodoRemovido = removeRec(raiz, val);
+        return nodoRemovido != null ? nodoRemovido.valor : null;
     }
+
+    private NodoAPB removeRec(NodoAPB nodo, T val) {
+        if (nodo == null) return null;
+
+        int cmp = val.compareTo(nodo.valor);
+
+        if (cmp < 0) {
+            nodo.esq = removeRec(nodo.esq, val);
+        } else if (cmp > 0) {
+            nodo.dir = removeRec(nodo.dir, val);
+        } else {
+            // Encontrou o nó a ser removido
+
+            // Caso 1: nó sem filho (folha) ou um filho
+            if (nodo.esq == null) {
+                if (nodo.dir != null) nodo.dir.pai = nodo.pai;
+                return nodo.dir;
+            } else if (nodo.dir == null) {
+                if (nodo.esq != null) nodo.esq.pai = nodo.pai;
+                return nodo.esq;
+            }
+
+            // Caso 2: nó com dois filhos
+            // Encontrar o sucessor (menor valor da subárvore direita)
+            NodoAPB sucessor = menorNodo(nodo.dir);
+
+            // Copiar o valor do sucessor para o nodo atual
+            nodo.valor = sucessor.valor;
+
+            // Remover o sucessor da subárvore direita
+            nodo.dir = removeRec(nodo.dir, sucessor.valor);
+        }
+
+        return nodo;
+    }
+
+    private NodoAPB menorNodo(NodoAPB nodo) {
+        while (nodo.esq != null) {
+            nodo = nodo.esq;
+        }
+        return nodo;
+    }
+
 
     // Retorna a raiz
     public T obtem_raiz() {
@@ -151,34 +196,48 @@ public class APB<T extends Comparable> {
     }
 
     public T menor_que(T val) {
-        return _menorQue(raiz, val);
+        return menor_que_rec(raiz, val);
     }
 
-    private T _menorQue(NodoAPB nodo, T val) {
+    private T menor_que_rec(NodoAPB nodo, T val) {
         if (nodo == null) return null;
 
-        if (nodo.valor.compareTo(val) < 0) {
-            T resultado = _menorQue(nodo.dir, val);
-            return resultado != null ? resultado : nodo.valor;
-        }
+        int cmp = nodo.valor.compareTo(val);
 
-        return _menorQue(nodo.esq, val);
+        if (cmp == 0) {
+            return nodo.valor; // valor exato encontrado
+        } else if (cmp > 0) {
+            // nodo.valor > val, candidatos só na esquerda
+            return menor_que_rec(nodo.esq, val);
+        } else {
+            // nodo.valor < val, nodo atual é candidato, procurar na direita para algo maior e <= val
+            T rightCandidate = menor_que_rec(nodo.dir, val);
+            return (rightCandidate != null) ? rightCandidate : nodo.valor;
+        }
     }
+
 
     public T maior_que(T val) {
-        return _maiorQue(raiz, val);
+        return maior_que_rec(raiz, val);
     }
-
-    private T _maiorQue(NodoAPB nodo, T val) {
+    private T maior_que_rec(NodoAPB nodo, T val) {
         if (nodo == null) return null;
 
-        if (nodo.valor.compareTo(val) > 0) {
-            T resultado = _maiorQue(nodo.esq, val);
-            return resultado != null ? resultado : nodo.valor;
-        }
+        int cmp = nodo.valor.compareTo(val);
 
-        return _maiorQue(nodo.dir, val);
+        if (cmp == 0) {
+            return nodo.valor; // valor exato encontrado
+        } else if (cmp < 0) {
+            // nodo.valor < val, candidatos só na direita
+            return maior_que_rec(nodo.dir, val);
+        } else {
+            // nodo.valor > val, nodo atual é candidato, procurar na esquerda para algo menor e >= val
+            T leftCandidate = maior_que_rec(nodo.esq, val);
+            return (leftCandidate != null) ? leftCandidate : nodo.valor;
+        }
     }
+
+
 
     public ListaSequencial menores_que(T val) {
         ListaSequencial lista = new ListaSequencial();
@@ -191,12 +250,13 @@ public class APB<T extends Comparable> {
 
         _menoresQue(nodo.esq, val, lista);
 
-        if (nodo.valor.compareTo(val) < 0) {
+        if (nodo.valor.compareTo(val) <= 0) {  // <= para incluir val
             lista.adiciona(nodo.valor);
         }
 
         _menoresQue(nodo.dir, val, lista);
     }
+
 
     public ListaSequencial maiores_que(T val) {
         ListaSequencial lista = new ListaSequencial();
@@ -204,17 +264,19 @@ public class APB<T extends Comparable> {
         return lista;
     }
 
+
     private void _maioresQue(NodoAPB nodo, T val, ListaSequencial lista) {
         if (nodo == null) return;
 
         _maioresQue(nodo.esq, val, lista);
 
-        if (nodo.valor.compareTo(val) > 0) {
+        if (nodo.valor.compareTo(val) >= 0) {  // >= para incluir val
             lista.adiciona(nodo.valor);
         }
 
         _maioresQue(nodo.dir, val, lista);
     }
+
 
     public int altura() {
         return _altura(raiz);
@@ -229,7 +291,7 @@ public class APB<T extends Comparable> {
         return Math.max(ae, ad);
     }
 
-    public int comprimento() {
+    public int tamanho() {
         return _comprimento(raiz);
     }
 
@@ -268,12 +330,10 @@ public class APB<T extends Comparable> {
         }
     }
 
-    // Método público para inverter a árvore
     public void inverte() {
         raiz = inverteRec(raiz);
     }
 
-    // Função recursiva que inverte a subárvore a partir do nodo fornecido
     private NodoAPB inverteRec(NodoAPB nodo) {
         if (nodo == null) return null;
 
@@ -288,11 +348,58 @@ public class APB<T extends Comparable> {
         return nodo;
     }
 
+    public int compara_arvores(APB<T> outraArvore) {
+        return comparaNodos(this.raiz, outraArvore.raiz);
+    }
 
+    // Método recursivo para comparar dois nós
+    private int comparaNodos(NodoAPB nodo1, NodoAPB nodo2) {
+        // Caso base 1: Ambos os nós são null -> As árvores são idênticas até aqui
+        if (nodo1 == null && nodo2 == null) {
+            return 2;
+        }
 
+        // Caso base 2: Um dos nós é null e o outro não -> As árvores são diferentes
+        if (nodo1 == null || nodo2 == null) {
+            return 0;
+        }
 
+        // Caso base 3: Comparando os valores dos nós
+        if (!nodo1.valor.equals(nodo2.valor)) {
+            return 0; // Se os valores forem diferentes, as árvores são diferentes
+        }
 
+        // Comparando as subárvores esquerdas e direitas
+        int esq = comparaNodos(nodo1.esq, nodo2.esq);
+        int dir = comparaNodos(nodo1.dir, nodo2.dir);
 
+        // Se ambas as subárvores esquerdas e direitas forem idênticas, então as árvores têm a mesma estrutura
+        if (esq == 2 && dir == 2) {
+            return 2; // As árvores são idênticas
+        }
 
+        // Caso contrário, se as árvores possuem os mesmos valores mas com topologias diferentes
+        return 1;
+    }
 
+    // Clona a árvore
+    public APB<T> clone() {
+        APB<T> novaArvore = new APB<>();
+        novaArvore.raiz = _clone(this.raiz, null);
+        return novaArvore;
+    }
+
+    // Método auxiliar recursivo para clonar a árvore
+    private NodoAPB _clone(NodoAPB nodo, NodoAPB pai) {
+        if (nodo == null) return null;
+
+        // Cria um novo nó com o mesmo valor e referência para o pai
+        NodoAPB novoNodo = new NodoAPB(nodo.valor, pai);
+
+        // Clona os filhos esquerdo e direito recursivamente
+        novoNodo.esq = _clone(nodo.esq, novoNodo);
+        novoNodo.dir = _clone(nodo.dir, novoNodo);
+
+        return novoNodo;
+    }
 }

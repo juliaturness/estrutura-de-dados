@@ -1,6 +1,7 @@
 package esd;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Implementação de uma Tabela Hash genérica com tratamento de colisão por encadeamento
@@ -233,4 +234,39 @@ public class TabHash<K, V> {
 
         return itens;
     }
+
+    // Método para clonar a tabela hash
+    public TabHash<K, V> clona() {
+        TabHash<K, V> novaTabela = new TabHash<>();
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            for (int j = 0; j < lista.comprimento(); j++) {
+                Par par = lista.obtem(j);
+                novaTabela.adiciona(par.obtemChave(), par.obtemValor());
+            }
+        }
+        return novaTabela;
+    }
+    /**
+     * Inverte a ordem dos elementos na tabela hash
+     */
+    public void inverte() {
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            lista.inverte();  // Supondo que a classe ListaSequencial tenha o método 'inverte'
+        }
+    }
+
+    /**
+     * Embaralha os elementos na tabela hash
+     */
+    public void embaralha() {
+        Random rand = new Random();
+
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            lista.embaralha();  // Supondo que a classe ListaSequencial tenha o método 'embaralha'
+        }
+    }
+
 }

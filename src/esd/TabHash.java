@@ -1,26 +1,7 @@
 package esd;
 
-import java.util.Objects;
-import java.util.Random;
-
-/**
- * Implementação de uma Tabela Hash genérica com tratamento de colisão por encadeamento
- *
- * @param <K> Tipo das chaves
- * @param <V> Tipo dos valores
- */
 public class TabHash<K, V> {
 
-    private ListaSequencial<ListaSequencial<Par>> tabela;
-    private int capacidade;
-    private int tamanho;
-
-    private static final int CAPACIDADE_INICIAL = 11;
-    private static final double FATOR_CARGA = 0.75;
-
-    /**
-     * Classe interna representando um par chave-valor
-     */
     public class Par {
         private K chave;
         private V valor;
@@ -43,22 +24,17 @@ public class TabHash<K, V> {
         }
 
         @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Par par = (Par) o;
-            return Objects.equals(chave, par.chave);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(chave);
+        public String toString() {
+            return "(" + chave + ", " + valor + ")";
         }
     }
 
-    /**
-     * Construtor: inicializa a tabela hash com listas encadeadas vazias
-     */
+    private ListaSequencial<ListaSequencial<Par>> tabela;
+    private int tamanho;
+    private int capacidade;
+    private static final double FATOR_CARGA = 0.75;
+    private static final int CAPACIDADE_INICIAL = 16;
+
     @SuppressWarnings("unchecked")
     public TabHash() {
         this.capacidade = CAPACIDADE_INICIAL;
@@ -70,126 +46,116 @@ public class TabHash<K, V> {
         }
     }
 
-    /**
-     * Função de hash para distribuir chaves pela tabela
-     */
-    private int hash(K chave) {
-        return (chave.hashCode() & 0x7FFFFFFF) % capacidade;
+    private int obtemIndice(K chave) {
+        if (chave == null) {
+            return 0;
+        }
+        return Math.abs(chave.hashCode()) % capacidade;
     }
 
-    /**
-     * Redimensiona a tabela ao ultrapassar o fator de carga
-     */
-    private void redimensiona() {
-        int novaCapacidade = capacidade * 2;
-        ListaSequencial<ListaSequencial<Par>> novaTabela = new ListaSequencial<>();
 
-        for (int i = 0; i < novaCapacidade; i++) {
-            novaTabela.adiciona(new ListaSequencial<Par>());
+    @SuppressWarnings("unchecked")
+    private void rehash() {
+        ListaSequencial<ListaSequencial<Par>> tabelaAntiga = tabela;
+        int capacidadeAntiga = capacidade;
+
+        // Dobra a capacidade
+        capacidade = capacidade * 2;
+        tabela = new ListaSequencial<>();
+        tamanho = 0;
+
+        // Inicializa nova tabela
+        for (int i = 0; i < capacidade; i++) {
+            tabela.adiciona(new ListaSequencial<Par>());
         }
 
-        for (int i = 0; i < capacidade; i++) {
-            ListaSequencial<Par> lista = tabela.obtem(i);
+        // Reinsere todos os elementos
+        for (int i = 0; i < capacidadeAntiga; i++) {
+            ListaSequencial<Par> lista = tabelaAntiga.obtem(i);
             for (int j = 0; j < lista.comprimento(); j++) {
                 Par par = lista.obtem(j);
-                int novoIndice = (par.obtemChave().hashCode() & 0x7FFFFFFF) % novaCapacidade;
-                novaTabela.obtem(novoIndice).adiciona(par);
+                adiciona(par.obtemChave(), par.obtemValor());
+            }
+        }
+    }
+
+    public void adiciona(K chave, V valor) {
+        if ((double) tamanho / capacidade >= FATOR_CARGA) {
+            rehash();
+        }
+
+        int indice = obtemIndice(chave);
+        ListaSequencial<Par> lista = tabela.obtem(indice);
+
+        // Verifica se a chave já existe
+        for (int i = 0; i < lista.comprimento(); i++) {
+            Par par = lista.obtem(i);
+            if (par.obtemChave().equals(chave)) {
+                par.defineValor(valor);
+                return;
             }
         }
 
-        this.tabela = novaTabela;
-        this.capacidade = novaCapacidade;
+        // Adiciona novo par
+        lista.adiciona(new Par(chave, valor));
+        tamanho++;
     }
 
-    /**
-     * Adiciona ou atualiza um par chave-valor
-     */
-    public void adiciona(K chave, V valor) {
-        if ((double) tamanho / capacidade >= FATOR_CARGA) {
-            redimensiona();
-        }
-
-        int indice = hash(chave);
-        ListaSequencial<Par> lista = tabela.obtem(indice);
-        Par novoPar = new Par(chave, valor);
-
-        int posicao = lista.procura(novoPar);
-        if (posicao != -1) {
-            lista.obtem(posicao).defineValor(valor);
-        } else {
-            lista.adiciona(novoPar);
-            tamanho++;
-        }
-    }
-
-    /**
-     * Retorna o valor associado à chave ou lança exceção se não encontrado
-     */
     public V obtem(K chave) {
-        int indice = hash(chave);
+        int indice = obtemIndice(chave);
         ListaSequencial<Par> lista = tabela.obtem(indice);
-        Par procurado = new Par(chave, null);
 
-        int posicao = lista.procura(procurado);
-        if (posicao != -1) {
-            return lista.obtem(posicao).obtemValor();
+        for (int i = 0; i < lista.comprimento(); i++) {
+            Par par = lista.obtem(i);
+            if (par.obtemChave().equals(chave)) {
+                return par.obtemValor();
+            }
         }
 
-        throw new IndexOutOfBoundsException("Chave não encontrada.");
+        throw new IndexOutOfBoundsException("Chave não encontrada: " + chave);
     }
 
-    /**
-     * Remove um par pela chave
-     */
-    public void remove(K chave) {
-        int indice = hash(chave);
-        ListaSequencial<Par> lista = tabela.obtem(indice);
-        Par procurado = new Par(chave, null);
-
-        int posicao = lista.procura(procurado);
-        if (posicao != -1) {
-            lista.remove(posicao);
-            tamanho--;
-        }
-    }
-
-    /**
-     * Verifica se uma chave está presente na tabela
-     */
-    public boolean contem(K chave) {
-        int indice = hash(chave);
-        ListaSequencial<Par> lista = tabela.obtem(indice);
-        return lista.procura(new Par(chave, null)) != -1;
-    }
-
-    /**
-     * Obtém o valor ou um valor padrão se a chave não existir
-     */
-    public V obtem_ou_default(K chave, V defval) {
+    public V obtem_ou_default(K chave, V valorPadrao) {
         try {
             return obtem(chave);
         } catch (IndexOutOfBoundsException e) {
-            return defval;
+            return valorPadrao;
         }
     }
 
-    /**
-     * Retorna o número de elementos armazenados
-     */
-    public int comprimento() {
-        return tamanho;
+    public boolean remove(K chave) {
+        int indice = obtemIndice(chave);
+        ListaSequencial<Par> lista = tabela.obtem(indice);
+
+        for (int i = 0; i < lista.comprimento(); i++) {
+            Par par = lista.obtem(i);
+            if (par.obtemChave().equals(chave)) {
+                lista.remove(i);
+                tamanho--;
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    /**
-     * Verifica se a tabela está vazia
-     */
+    public boolean contem(K chave) {
+        try {
+            obtem(chave);
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
+    }
+
     public boolean esta_vazia() {
         return tamanho == 0;
     }
 
-    /**
-     * Retorna todas as chaves armazenadas
-     */
+    public int comprimento() {
+        return tamanho;
+    }
+
     public ListaSequencial<K> chaves() {
         ListaSequencial<K> chaves = new ListaSequencial<>();
 
@@ -203,9 +169,6 @@ public class TabHash<K, V> {
         return chaves;
     }
 
-    /**
-     * Retorna todos os valores armazenados
-     */
     public ListaSequencial<V> valores() {
         ListaSequencial<V> valores = new ListaSequencial<>();
 
@@ -219,54 +182,59 @@ public class TabHash<K, V> {
         return valores;
     }
 
-    /**
-     * Retorna todos os pares chave-valor armazenados
-     */
     public ListaSequencial<Par> items() {
-        ListaSequencial<Par> itens = new ListaSequencial<>();
+        ListaSequencial<Par> items = new ListaSequencial<>();
 
         for (int i = 0; i < capacidade; i++) {
             ListaSequencial<Par> lista = tabela.obtem(i);
             for (int j = 0; j < lista.comprimento(); j++) {
-                itens.adiciona(lista.obtem(j));
+                items.adiciona(lista.obtem(j));
             }
         }
 
-        return itens;
+        return items;
     }
 
-    // Método para clonar a tabela hash
-    public TabHash<K, V> clona() {
-        TabHash<K, V> novaTabela = new TabHash<>();
+    public void limpa() {
         for (int i = 0; i < capacidade; i++) {
+            tabela.obtem(i).limpa();
+        }
+        tamanho = 0;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("TabHash {\n");
+
+        for (int i = 0; i < capacidade; i++) {
+            sb.append("  [").append(i).append("]: ");
             ListaSequencial<Par> lista = tabela.obtem(i);
+            if (lista.esta_vazia()) {
+                sb.append("∅");
+            } else {
+                sb.append(lista.toString());
+            }
+            sb.append("\n");
+        }
+
+        sb.append("}");
+        return sb.toString();
+    }
+
+    public void copia(TabHash<K, V> outra) {
+        // Percorre todos os itens da outra tabela
+        for (int i = 0; i < outra.capacidade; i++) {
+            ListaSequencial<Par> lista = outra.tabela.obtem(i);
+
+            // Para cada lista (índice), percorre seus pares
             for (int j = 0; j < lista.comprimento(); j++) {
                 Par par = lista.obtem(j);
-                novaTabela.adiciona(par.obtemChave(), par.obtemValor());
+                // Adiciona os pares na tabela atual
+                adiciona(par.obtemChave(), par.obtemValor());
             }
         }
-        return novaTabela;
-    }
-    /**
-     * Inverte a ordem dos elementos na tabela hash
-     */
-    public void inverte() {
-        for (int i = 0; i < capacidade; i++) {
-            ListaSequencial<Par> lista = tabela.obtem(i);
-            lista.inverte();  // Supondo que a classe ListaSequencial tenha o método 'inverte'
-        }
     }
 
-    /**
-     * Embaralha os elementos na tabela hash
-     */
-    public void embaralha() {
-        Random rand = new Random();
-
-        for (int i = 0; i < capacidade; i++) {
-            ListaSequencial<Par> lista = tabela.obtem(i);
-            lista.embaralha();  // Supondo que a classe ListaSequencial tenha o método 'embaralha'
-        }
-    }
 
 }

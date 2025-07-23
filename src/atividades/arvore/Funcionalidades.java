@@ -15,7 +15,7 @@ public class Funcionalidades<T extends Comparable<T>> {
     }
 
 
-    public T encontraAntecessor(APB<T> arvore, T val) {
+    public T antecessor(APB<T> arvore, T val) {
         if (arvore == null || arvore.esta_vazia()) return null;
         return arvore.menor_que(val);
     }

@@ -193,9 +193,29 @@ public class ListaSimples <T> {
 
     public void ordena() {}
 
-    public void inverte() {}
 
-    public void embaralha() {}
+
+    public void inverte() {
+        if (len <= 1) {
+            return; // Não há nada para inverter se a lista tiver 0 ou 1 elementos
+        }
+
+        Node anterior = null;
+        Node atual = primeiro;
+        Node proximo = null;
+
+        while (atual != null) {
+            proximo = atual.proximo; // Salva o próximo nó
+            atual.proximo = anterior; // Inverte o link
+            anterior = atual; // Move o anterior para frente
+            atual = proximo; // Move o atual para frente
+        }
+
+        // Depois que a lista estiver invertida, o "primeiro" será o último e o "ultimo" será o primeiro
+        ultimo = primeiro;
+        primeiro = anterior;
+    }
+
 
     private Node encontraNodo(int indice) {
         if (indice == 0) {

@@ -239,8 +239,10 @@ public class APB<T extends Comparable> {
     private void _maioresQue(NodoAPB nodo, T val, ListaSequencial lista) {
         if (nodo == null) return;
         _maioresQue(nodo.esq, val, lista);
-        if (nodo.valor.compareTo(val) >= 0)
+        if (nodo.valor.compareTo(val) >= 0) {
             lista.adiciona(nodo.valor);
+        }
+
         _maioresQue(nodo.dir, val, lista);
     }
 

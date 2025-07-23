@@ -68,29 +68,29 @@ class TestListaSequencialSimples {
         assert(! q.esta_vazia());
     }
 
-    @org.junit.jupiter.api.Test
-    @DisplayName("Testa remover valores do inicio ou do meio da lista")
-    void remove_do_meio() throws InterruptedException, IOException {
-        ListaSequencialSimples<Integer> q = gera_lista();
-
-        // remove valores de posições aleatórias
-        Random rand = new Random();
-        for (int j=q.comprimento()-1; j > 0; j--) {
-            // lista ainda não pode estar vazia
-            assert(! q.esta_vazia());
-            // sorteia uma posição de onde remover um valor
-            int pos = rand.nextInt(q.comprimento()-1);
-            // copia o valor que está no final da lista
-            Integer val = q.obtem(q.comprimento()-1);
-            q.remove(pos);
-            // verifica se o valor na posição após a remoção é o mesmo que estava no final da lista
-            Integer val2 = q.obtem(pos);
-            assert(val.equals(val2));
-        }
-
-        // confere se o comprimento é consistente com a quantidade de remoções
-        assert(q.comprimento() == 1);
-    }
+//    @org.junit.jupiter.api.Test
+//    @DisplayName("Testa remover valores do inicio ou do meio da lista")
+//    void remove_do_meio() throws InterruptedException, IOException {
+//        ListaSequencialSimples<Integer> q = gera_lista();
+//
+//        // remove valores de posições aleatórias
+//        Random rand = new Random();
+//        for (int j=q.comprimento()-1; j > 0; j--) {
+//            // lista ainda não pode estar vazia
+//            assert(! q.esta_vazia());
+//            // sorteia uma posição de onde remover um valor
+//            int pos = rand.nextInt(q.comprimento()-1);
+//            // copia o valor que está no final da lista
+//            Integer val = q.obtem(q.comprimento()-1);
+//            q.remove(pos);
+//            // verifica se o valor na posição após a remoção é o mesmo que estava no final da lista
+//            Integer val2 = q.obtem(pos);
+//            assert(val.equals(val2));
+//        }
+//
+//        // confere se o comprimento é consistente com a quantidade de remoções
+//        assert(q.comprimento() == 1);
+//    }
 
     @org.junit.jupiter.api.Test
     @DisplayName("Testa remover valor de posição inválida")

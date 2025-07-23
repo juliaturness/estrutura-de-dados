@@ -222,19 +222,4 @@ public class TabHash<K, V> {
         return sb.toString();
     }
 
-    public void copia(TabHash<K, V> outra) {
-        // Percorre todos os itens da outra tabela
-        for (int i = 0; i < outra.capacidade; i++) {
-            ListaSequencial<Par> lista = outra.tabela.obtem(i);
-
-            // Para cada lista (índice), percorre seus pares
-            for (int j = 0; j < lista.comprimento(); j++) {
-                Par par = lista.obtem(j);
-                // Adiciona os pares na tabela atual
-                adiciona(par.obtemChave(), par.obtemValor());
-            }
-        }
-    }
-
-
 }

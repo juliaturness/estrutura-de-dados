@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestFila" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.015">
+  <properties/>
+  <testcase name="Testa enfileirar e expandir capacidade da fila" classname="TestFila" time="0.001"/>
+  <testcase name="Testa desenfileirar de fila vazia" classname="TestFila" time="0.001"/>
+  <testcase name="Testa enfileirar valores e acessar frente" classname="TestFila" time="0.001"/>
+  <testcase name="Testa enfileirar valores" classname="TestFila" time="0.001"/>
+  <testcase name="Testa desenfileirar valores" classname="TestFila" time="0.001"/>
+  <testcase name="Testa acessar frente de fila vazia" classname="TestFila" time="0.001"/>
+  <testcase name="Testa enfileirar valores a partir de um posiÃ§Ã£o diferente do inÃ­cio da Ã¡rea de armazenamento, para evidenciar ser fila circular" classname="TestFila" time="0.001"/>
+  <testcase name="Testa criaÃ§Ã£o de fila: deve estar vazia ao ser criada" classname="TestFila" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

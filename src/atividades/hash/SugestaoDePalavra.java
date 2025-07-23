@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class SugestãoDePalavra {
+public class SugestaoDePalavra {
     public static void main(String[] args) {
 
         // Criar uma tabela hash para armazenar prefixos e palavras

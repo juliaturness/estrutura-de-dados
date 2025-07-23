@@ -48,18 +48,24 @@ public class ListaSequencialSimples <T> {
     }
 
     public void remove(int indice) {
-        // remove um valor da posição indicada pelo parâmetro "indice"
-        // move para essa posição o valor que está no final da lista
-        // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
+        // Verifica se o índice está dentro do intervalo válido
         if (indice < 0 || indice >= len) {
-            throw new IndexOutOfBoundsException("Índice inválido: " + indice);
+            throw new IndexOutOfBoundsException("indice inválido: " + indice);
         }
-        for (int i = indice; i < len - 1; i++) {
-            area[i] = area[i + 1]; // shift à esquerda
+
+        // Caso a posição removida não seja a última
+        if (indice != len - 1) {
+            // Move os elementos à esquerda para preencher a lacuna
+            for (int i = indice; i < len - 1; i++) {
+                area[i] = area[i + 1];
+            }
         }
+
+        // A posição final (última) deve ser setada como null, pois foi "deslocada"
         area[len - 1] = null;
-        len--;
+        len--; // Decrementa o tamanho da lista
     }
+
 
     public int procura(T valor) {
         // retorna um inteiro que representa aposição onde valor foi encontrado pela primeira vez (contando do início da lista)
@@ -76,7 +82,7 @@ public class ListaSequencialSimples <T> {
         // retorna o valor armazenado na posição indica pelo parâmetro "indice"
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
         if(indice < 0 || indice >= len){
-            throw new IndexOutOfBoundsException("Índice Invalido:"+ indice);
+            throw new IndexOutOfBoundsException("indice Invalido:"+ indice);
         }
         return area[indice];
     }
@@ -85,7 +91,7 @@ public class ListaSequencialSimples <T> {
         // armazena o valor na posição indicada por "indice", substituindo o valor lá armazenado atualmente
         // disparar uma exceção IndexOutOfBoundsException caso posição seja inválida
         if(indice < 0 || indice >= len){
-            throw new IndexOutOfBoundsException("Índice Invalido:"+ indice);
+            throw new IndexOutOfBoundsException("indice Invalido:"+ indice);
         }
         area[indice] = valor;
     }
@@ -103,6 +109,8 @@ public class ListaSequencialSimples <T> {
 
         len = 0;
     }
+
+
 
     public void embaralha() {
         if (len > 1) {

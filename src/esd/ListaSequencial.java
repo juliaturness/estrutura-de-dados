@@ -1,7 +1,5 @@
 package esd;
 
-import java.util.Random;
-
 public class ListaSequencial<T> {
     T[] area; // vetor que armazena os elementos
     int len = 0; // controla o número de elementos armazenados
@@ -195,56 +193,6 @@ public class ListaSequencial<T> {
         }
 
     }
-
-    @Override
-    public String toString() {
-        if (len == 0) {
-            return "[]";
-        }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (int i = 0; i < len; i++) {
-            sb.append(area[i]);
-            if (i < len - 1) {
-                sb.append(", ");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-    /**
-     * Inverte a ordem dos elementos na lista
-     */
-    public void inverte() {
-        int esquerda = 0;
-        int direita = len - 1;
-
-        while (esquerda < direita) {
-            T temp = area[esquerda];
-            area[esquerda] = area[direita];
-            area[direita] = temp;
-
-            esquerda++;
-            direita--;
-        }
-    }
-
-    /**
-     * Embaralha os elementos da lista
-     */
-    public void embaralha() {
-        Random rand = new Random();
-
-        for (int i = len - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 1);
-            T temp = area[i];
-            area[i] = area[j];
-            area[j] = temp;
-        }
-    }
-
-
 }
 
 

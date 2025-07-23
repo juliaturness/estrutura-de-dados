@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestTabHash" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.229">
+  <properties/>
+  <testcase name="Testa adicionar chaves e valores e forÃ§ar rehashing" classname="TestTabHash" time="0.21"/>
+  <testcase name="Testa obter lista de chaves" classname="TestTabHash" time="0.001"/>
+  <testcase name="Testa verificar se chave existe" classname="TestTabHash" time="0.001"/>
+  <testcase name="Testa adicionar chaves e valores" classname="TestTabHash" time="0.001"/>
+  <testcase name="Testa obter valor de chave inexistente, obtendo entÃ£o default" classname="TestTabHash" time="0.002"/>
+  <testcase name="Testa remover chave" classname="TestTabHash" time="0.002"/>
+  <testcase name="Testa criar uma tabela" classname="TestTabHash" time="0.001"/>
+  <testcase name="Testa obter lista de items" classname="TestTabHash" time="0.0"/>
+  <testcase name="Testa obter valor associado a chave" classname="TestTabHash" time="0.002"/>
+  <testcase name="Testa obter lista de valores" classname="TestTabHash" time="0.0"/>
+  <testcase name="Testa substituir valor associado a chave" classname="TestTabHash" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

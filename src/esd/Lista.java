@@ -124,25 +124,21 @@ public class Lista<T extends Comparable<T>> {
     public void ordena() {
         if (len <= 1) return;
 
-        // cria a árvore binária
-        APB<T> arvore = new APB<>();
-
-        //insere todos os valores da lista na árvore
-        Node atual = guarda.proximo;
-        while (atual != guarda) {
-            arvore.adiciona(atual.valor);  // insere na árvore
-            atual = atual.proximo;
-        }
-
-        // obtem os valores ordenados em uma lista
-        ListaSequencial<T> valoresOrdenados = arvore.emOrdem();
-
-        // substitui os valores da lista pelos valores ordenados
-        Node nodo = guarda.proximo;
-        for (int i = 0; i < valoresOrdenados.comprimento(); i++) {
-            nodo.valor = valoresOrdenados.obtem(i);  // substitui o valor na lista
-            nodo = nodo.proximo;  // move para o próximo nó
-        }
+        boolean trocou;
+        do {
+            trocou = false;
+            Node atual = guarda.proximo;
+            while (atual.proximo != guarda) {
+                Node prox = atual.proximo;
+                if (atual.valor.compareTo(prox.valor) > 0) {
+                    T temp = atual.valor;
+                    atual.valor = prox.valor;
+                    prox.valor = temp;
+                    trocou = true;
+                }
+                atual = atual.proximo;
+            }
+        } while (trocou);
     }
 
     public void inverte() {

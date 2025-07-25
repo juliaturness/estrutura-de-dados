@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestLista" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.023">
+<testsuite name="TestLista" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-07-25T17:56:54" hostname="P50252" time="0.027">
   <properties/>
-  <testcase name="Testa inserir valores no inÃ­cio" classname="TestLista" time="0.003"/>
+  <testcase name="Testa inserir valores no inÃ­cio" classname="TestLista" time="0.005"/>
   <testcase name="Testa adicionar valores no final" classname="TestLista" time="0.002"/>
   <testcase name="Testa ordenar a lista" classname="TestLista" time="0.001"/>
-  <testcase name="Testa remover valores" classname="TestLista" time="0.001"/>
-  <testcase name="Testa procurar valores" classname="TestLista" time="0.002"/>
+  <testcase name="Testa remover valores" classname="TestLista" time="0.002"/>
+  <testcase name="Testa procurar valores" classname="TestLista" time="0.001"/>
   <testcase name="Testa substituir valor de posiÃ§Ã£o invÃ¡lida" classname="TestLista" time="0.002"/>
-  <testcase name="Testa criaÃ§Ã£o de lista: deve estar vazia ao ser criada" classname="TestLista" time="0.001"/>
-  <testcase name="Testa inserir valores em posiÃ§Ãµes aleatÃ³rias" classname="TestLista" time="0.0"/>
+  <testcase name="Testa criaÃ§Ã£o de lista: deve estar vazia ao ser criada" classname="TestLista" time="0.0"/>
+  <testcase name="Testa inserir valores em posiÃ§Ãµes aleatÃ³rias" classname="TestLista" time="0.001"/>
   <testcase name="Testa substituir valores" classname="TestLista" time="0.001"/>
-  <testcase name="Testa remover valor de posiÃ§Ã£o invÃ¡lida" classname="TestLista" time="0.001"/>
+  <testcase name="Testa remover valor de posiÃ§Ã£o invÃ¡lida" classname="TestLista" time="0.002"/>
   <testcase name="Testa inverter a lista" classname="TestLista" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

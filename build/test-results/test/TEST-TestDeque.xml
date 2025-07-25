@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestDeque" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.036">
+<testsuite name="TestDeque" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-07-25T17:56:54" hostname="P50252" time="0.042">
   <properties/>
-  <testcase name="Testa acessar acessa com posiÃ§Ã£o invÃ¡lida" classname="TestDeque" time="0.008"/>
-  <testcase name="Testa inserir valores" classname="TestDeque" time="0.002"/>
-  <testcase name="Testa anexar valores" classname="TestDeque" time="0.001"/>
-  <testcase name="Testa enfileirar valores e acessar acessa_final" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa acessar acessa com posiÃ§Ã£o invÃ¡lida" classname="TestDeque" time="0.011"/>
+  <testcase name="Testa inserir valores" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa anexar valores" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa enfileirar valores e acessar acessa_final" classname="TestDeque" time="0.002"/>
   <testcase name="Testa retirar valores do final" classname="TestDeque" time="0.001"/>
-  <testcase name="Testa criaÃ§Ã£o de Deque: deve estar vazia ao ser criada" classname="TestDeque" time="0.001"/>
-  <testcase name="Testa enfileirar valores e acessar posiÃ§Ãµes quaisquer" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa criaÃ§Ã£o de Deque: deve estar vazia ao ser criada" classname="TestDeque" time="0.0"/>
+  <testcase name="Testa enfileirar valores e acessar posiÃ§Ãµes quaisquer" classname="TestDeque" time="0.001"/>
   <testcase name="Testa enfileirar valores e acessar acessa_inicio" classname="TestDeque" time="0.001"/>
   <testcase name="Testa retirar valores do inicio" classname="TestDeque" time="0.001"/>
   <testcase name="Testa enfileirar valores a partir de um posiÃ§Ã£o diferente do inÃ­cio da Ã¡rea de armazenamento, para evidenciar se Deque foi feito como fila circular" classname="TestDeque" time="0.001"/>
-  <testcase name="Testa acessar acessa_final de Deque vazia" classname="TestDeque" time="0.001"/>
-  <testcase name="Testa enfileirar em Deque cheia" classname="TestDeque" time="0.001"/>
+  <testcase name="Testa acessar acessa_final de Deque vazia" classname="TestDeque" time="0.002"/>
+  <testcase name="Testa enfileirar em Deque cheia" classname="TestDeque" time="0.002"/>
   <testcase name="Testa desenfileirar de Deque vazia" classname="TestDeque" time="0.002"/>
   <testcase name="Testa acessar acessa_inicio de Deque vazia" classname="TestDeque" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

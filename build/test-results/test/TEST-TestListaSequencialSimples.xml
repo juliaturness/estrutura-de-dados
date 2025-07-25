@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestListaSequencialSimples" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.023">
+<testsuite name="TestListaSequencialSimples" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-07-25T17:56:54" hostname="P50252" time="0.034">
   <properties/>
-  <testcase name="Testa obter valor de posiÃ§Ã£o invÃ¡lida" classname="TestListaSequencialSimples" time="0.006"/>
+  <testcase name="Testa obter valor de posiÃ§Ã£o invÃ¡lida" classname="TestListaSequencialSimples" time="0.015"/>
   <testcase name="Testa anexar e obter valores" classname="TestListaSequencialSimples" time="0.001"/>
-  <testcase name="Testa procurar valores na lista" classname="TestListaSequencialSimples" time="0.001"/>
-  <testcase name="Testa substituir valor de posiÃ§Ã£o invÃ¡lida" classname="TestListaSequencialSimples" time="0.002"/>
+  <testcase name="Testa procurar valores na lista" classname="TestListaSequencialSimples" time="0.002"/>
+  <testcase name="Testa substituir valor de posiÃ§Ã£o invÃ¡lida" classname="TestListaSequencialSimples" time="0.003"/>
   <testcase name="Testa criaÃ§Ã£o de lista: deve estar vazia ao ser criada" classname="TestListaSequencialSimples" time="0.001"/>
   <testcase name="Testa limpar uma lista" classname="TestListaSequencialSimples" time="0.001"/>
-  <testcase name="Testa substituir valores" classname="TestListaSequencialSimples" time="0.001"/>
+  <testcase name="Testa substituir valores" classname="TestListaSequencialSimples" time="0.0"/>
   <testcase name="Testa remover valor de posiÃ§Ã£o invÃ¡lida" classname="TestListaSequencialSimples" time="0.002"/>
   <testcase name="Testa remover valores do fim da lista" classname="TestListaSequencialSimples" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

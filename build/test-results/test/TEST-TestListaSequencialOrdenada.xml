@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestListaSequencialOrdenada" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.136">
+<testsuite name="TestListaSequencialOrdenada" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-07-25T17:56:54" hostname="P50252" time="0.267">
   <properties/>
-  <testcase name="Testa criaÃ§Ã£o de lista: deve estar vazia ao ser criada" classname="TestListaSequencialOrdenada" time="0.001"/>
-  <testcase name="Testa inserir e obter valores" classname="TestListaSequencialOrdenada" time="0.001"/>
-  <testcase name="Testa remover valores" classname="TestListaSequencialOrdenada" time="0.001"/>
+  <testcase name="Testa criaÃ§Ã£o de lista: deve estar vazia ao ser criada" classname="TestListaSequencialOrdenada" time="0.002"/>
+  <testcase name="Testa inserir e obter valores" classname="TestListaSequencialOrdenada" time="0.002"/>
+  <testcase name="Testa remover valores" classname="TestListaSequencialOrdenada" time="0.003"/>
   <testcase name="Testa procurar valores na lista" classname="TestListaSequencialOrdenada" time="0.001"/>
-  <testcase name="Testa procurar valores na lista, supondo ser rÃ¡pido (com busca binÃ¡ria)" classname="TestListaSequencialOrdenada" time="0.129"/>
+  <testcase name="Testa procurar valores na lista, supondo ser rÃ¡pido (com busca binÃ¡ria)" classname="TestListaSequencialOrdenada" time="0.253"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

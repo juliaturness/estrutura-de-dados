@@ -1,80 +1,167 @@
 package esd;
 
-/**
- * Implementação de um conjunto usando tabela hash internamente
- * @param <V> Tipo dos elementos armazenados no conjunto
- */
-public class Conjunto<V> {
-    private TabHash<V, Object> tab = new TabHash<>();
+// conjunto implementado usando tabela hash
+// armazena elementos unicos sem duplicatas
+public class Conjunto<T> {
 
-    /**
-     * Construtor do conjunto
-     */
+    // usa tabela hash internamente : chaves sao os elementos, valores sao sempre true
+    private TabHash<T, Boolean> tab;
+
+    // cria conjunto vazio
     public Conjunto() {
-        // A tabela hash é inicializada automaticamente
+        tab = new TabHash<>();
     }
 
-    /**
-     * Adiciona um valor ao conjunto
-     * @param valor Valor a ser adicionado
-     */
-    public void adiciona(V valor) {
-        // Usamos null como valor associado, pois só nos importa a chave
-        tab.adiciona(valor, null);
+    // adiciona elemento ao conjunto
+    // se ja existe, n faz nada (conjuntos n tem duplicatas)
+    public void adiciona(T elemento) {
+        tab.adiciona(elemento, true);
     }
 
-    /**
-     * Verifica se o conjunto contém um valor
-     * @param valor Valor a ser verificado
-     * @return true se o valor está no conjunto, false caso contrário
-     */
-    public boolean contem(V valor) {
-        return tab.contem(valor);
+    // remove elemento do conjunto
+    // retorna true se removeu, false se n existia
+    public boolean remove(T elemento) {
+        try {
+            tab.remove(elemento);
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
     }
 
-    /**
-     * Remove um valor do conjunto
-     * @param valor Valor a ser removido
-     */
-    public void remove(V valor) {
-        tab.remove(valor);
+    // verifica se elemento ta no conjunto
+    public boolean contem(T elemento) {
+        return tab.contem(elemento);
     }
 
-    /**
-     * Verifica se o conjunto está vazio
-     * @return true se o conjunto está vazio, false caso contrário
-     */
-    public boolean estaVazia() {
+    // verifica se conjunto ta vazio
+    public boolean esta_vazio() {
         return tab.esta_vazia();
     }
 
-    /**
-     * Retorna o número de elementos no conjunto
-     * @return Número de elementos
-     */
-    public int tamanho() {
-        // Implementação alternativa: contar os itens não nulos na tabela
+    // retorna quantos elementos tem no conjunto
+    public int comprimento() {
         return tab.comprimento();
     }
 
-    /**
-     * Retorna uma lista com todos os elementos do conjunto
-     * @return ListaSequencial contendo os elementos
-     */
-    public ListaSequencial<V> elementos() {
+    // retorna lista com todos os elementos do conjunto
+    public ListaSequencial<T> elementos() {
         return tab.chaves();
     }
 
-    /**
-     * Limpa o conjunto, removendo todos os elementos
-     */
+    // remove todos os elementos
     public void limpa() {
-        // Implementação alternativa: criar tabela vazia
-        this.tab = new TabHash<>();
+        tab.limpa();
     }
 
-    @Override
-    public String toString() {
-        return elementos().toString();
+    // retorna capacidade atual da tabela interna
+    public int capacidade() {
+        return tab.capacidade();
+    }
+
+    // retorna fator de carga da tabela interna
+    public double fatorCarga() {
+        return tab.fatorCarga();
+    }
+
+    // cria novo conjunto com a uniao deste com outro
+    // resultado contem elementos q estao em qualquer um dos dois
+    public Conjunto<T> uniao(Conjunto<T> outro) {
+        Conjunto<T> resultado = new Conjunto<>();
+        // adiciona todos os elementos deste conjunto
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++)
+            resultado.adiciona(meus.obtem(i));
+        // adiciona todos os elementos do outro conjunto
+        ListaSequencial<T> outros = outro.elementos();
+        for (int i = 0; i < outros.comprimento(); i++)
+            resultado.adiciona(outros.obtem(i));
+        return resultado;
+    }
+
+    // cria novo conjunto com a intersecao deste com outro
+    // resultado contem elementos q estao nos dois conjuntos
+    public Conjunto<T> intersecao(Conjunto<T> outro) {
+        Conjunto<T> resultado = new Conjunto<>();
+        // percorre elementos deste conjunto
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++) {
+            T elemento = meus.obtem(i);
+            // se elemento ta no outro conjunto tambem, adiciona no resultado
+            if (outro.contem(elemento)) resultado.adiciona(elemento);
+        }
+        return resultado;
+    }
+
+    // cria novo conjunto com a diferenca deste menos outro
+    // resultado contem elementos q estao neste mas n no outro
+    public Conjunto<T> diferenca(Conjunto<T> outro) {
+        Conjunto<T> resultado = new Conjunto<>();
+        // percorre elementos deste conjunto
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++) {
+            T elemento = meus.obtem(i);
+            // se elemento n ta no outro conjunto, adiciona no resultado
+            if (!outro.contem(elemento)) resultado.adiciona(elemento);
+        }
+        return resultado;
+    }
+
+    // verifica se este conjunto é subconjunto do outro
+    // retorna true se todos os elementos deste estao no outro
+    public boolean ehSubconjunto(Conjunto<T> outro) {
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++) {
+            T elemento = meus.obtem(i);
+            // se algum elemento n ta no outro, n é subconjunto
+            if (!outro.contem(elemento)) return false;
+        }
+        return true;
+    }
+
+    // verifica se este conjunto é superconjunto do outro
+    // retorna true se contem todos os elementos do outro
+    public boolean ehSuperconjunto(Conjunto<T> outro) {
+        return outro.ehSubconjunto(this);
+    }
+
+    // verifica se dois conjuntos sao iguais
+    // sao iguais se tem os msmos elementos
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Conjunto<T> outro = (Conjunto<T>) obj;
+        // se tem tamanhos diferentes, n sao iguais
+        if (comprimento() != outro.comprimento()) return false;
+        // verifica se todos os elementos deste estao no outro
+        return ehSubconjunto(outro);
+    }
+
+    // cria copia do conjunto
+    public Conjunto<T> clona() {
+        Conjunto<T> copia = new Conjunto<>();
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++)
+            copia.adiciona(meus.obtem(i));
+        return copia;
+    }
+
+    // verifica se dois conjuntos sao disjuntos (nao tem elementos em comum)
+    public boolean ehDisjunto(Conjunto<T> outro) {
+        ListaSequencial<T> meus = elementos();
+        for (int i = 0; i < meus.comprimento(); i++) {
+            T elemento = meus.obtem(i);
+            if (outro.contem(elemento)) return false;
+        }
+        return true;
+    }
+
+    // converte para array
+    public Object[] paraArray() {
+        ListaSequencial<T> meus = elementos();
+        Object[] array = new Object[meus.comprimento()];
+        for (int i = 0; i < meus.comprimento(); i++)
+            array[i] = meus.obtem(i);
+        return array;
     }
 }

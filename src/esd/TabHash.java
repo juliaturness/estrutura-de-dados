@@ -1,6 +1,12 @@
 package esd;
 
+import java.util.Random;
+
 public class TabHash<K, V> {
+
+    public double fatorCarga() {
+        return (double) tamanho / capacidade;
+    }
 
     public class Par {
         private K chave;
@@ -139,6 +145,10 @@ public class TabHash<K, V> {
         return false;
     }
 
+    public int capacidade() {
+        return capacidade;
+    }
+
     public boolean contem(K chave) {
         try {
             obtem(chave);
@@ -221,5 +231,92 @@ public class TabHash<K, V> {
         sb.append("}");
         return sb.toString();
     }
+
+    public TabHash<K, V> clona() {
+        TabHash<K, V> novaTabHash = new TabHash<>();
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            for (int j = 0; j < lista.comprimento(); j++) {
+                Par par = lista.obtem(j);
+                novaTabHash.adiciona(par.obtemChave(), par.obtemValor());
+            }
+        }
+        return novaTabHash;
+    }
+
+    public TabHash<K, V> copia() {
+        TabHash<K, V> novaTabHash = new TabHash<>();
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            for (int j = 0; j < lista.comprimento(); j++) {
+                Par par = lista.obtem(j);
+                novaTabHash.adiciona(par.obtemChave(), par.obtemValor());
+            }
+        }
+        return novaTabHash;
+    }
+
+    public boolean compara(TabHash<K, V> outraTabHash) {
+        if (this.tamanho != outraTabHash.tamanho) {
+            return false;
+        }
+
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista1 = tabela.obtem(i);
+            ListaSequencial<Par> lista2 = outraTabHash.tabela.obtem(i);
+
+            if (lista1.comprimento() != lista2.comprimento()) {
+                return false;
+            }
+
+            for (int j = 0; j < lista1.comprimento(); j++) {
+                Par par1 = lista1.obtem(j);
+                Par par2 = lista2.obtem(j);
+
+                if (!par1.obtemChave().equals(par2.obtemChave()) || !par1.obtemValor().equals(par2.obtemValor())) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public void inverte() {
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+
+            // Inverte a ordem dos elementos na lista
+            int esquerda = 0;
+            int direita = lista.comprimento() - 1;
+
+            while (esquerda < direita) {
+                // Troca os elementos
+                Par temp = lista.obtem(esquerda);
+                lista.remove(esquerda);
+                lista.adiciona(lista.obtem(direita)); // Adiciona no final
+                lista.remove(direita); // Remove o último
+                lista.adiciona(temp); // Adiciona no último
+                esquerda++;
+                direita--;
+            }
+        }
+    }
+
+
+    public void embaralha() {
+        Random rand = new Random();
+        for (int i = 0; i < capacidade; i++) {
+            ListaSequencial<Par> lista = tabela.obtem(i);
+            for (int j = 0; j < lista.comprimento(); j++) {
+                int randomIndex = rand.nextInt(lista.comprimento());
+                // Troca de elementos na lista
+                Par temp = lista.obtem(j);
+                Par tempRandom = lista.obtem(randomIndex);
+                lista.adiciona(tempRandom);
+                lista.adiciona(temp);
+            }
+        }
+    }
+
+
 
 }

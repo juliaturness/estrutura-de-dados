@@ -1,44 +1,38 @@
 package atividades.hash;
 
-import esd.Conjunto; // Importa a classe Conjunto do pacote esd
+import esd.Conjunto;
 
-/**
- * Classe de demonstração para o uso da implementação de Conjunto.
- * Esta classe atua como o ponto de entrada (com o método main) para testar
- * as funcionalidades do Conjunto.
- */
 public class HashComConjunto {
+    public class Main {
+        public static void main(String[] args) {
+            Conjunto<Integer> conjunto1 = new Conjunto<>();
+            Conjunto<Integer> conjunto2 = new Conjunto<>();
 
-    public static void main(String[] args) {
-        // Cria uma instância do seu Conjunto
-        Conjunto<String> meuConjunto = new Conjunto<>();
+            // Adicionando elementos ao conjunto1
+            conjunto1.adiciona(1);
+            conjunto1.adiciona(2);
+            conjunto1.adiciona(3);
 
-        System.out.println("Conjunto vazio? " + meuConjunto.estaVazia()); // true
-        System.out.println("Tamanho: " + meuConjunto.tamanho()); // 0
+            // Adicionando elementos ao conjunto2
+            conjunto2.adiciona(3);
+            conjunto2.adiciona(4);
+            conjunto2.adiciona(5);
 
-        meuConjunto.adiciona("Maçã");
-        meuConjunto.adiciona("Banana");
-        meuConjunto.adiciona("Laranja");
-        meuConjunto.adiciona("Maçã"); // Adicionando duplicata, não deve alterar o tamanho
+            // União de conjunto1 e conjunto2
+            Conjunto<Integer> uniao = conjunto1.uniao(conjunto2);
+            System.out.println("União: " + uniao);
 
-        System.out.println("\nElementos no conjunto: " + meuConjunto); // [Maçã, Banana, Laranja] (ordem pode variar)
-        System.out.println("Tamanho: " + meuConjunto.tamanho()); // 3
-        System.out.println("Contém 'Banana'? " + meuConjunto.contem("Banana")); // true
-        System.out.println("Contém 'Uva'? " + meuConjunto.contem("Uva")); // false
+            // Interseção de conjunto1 e conjunto2
+            Conjunto<Integer> intersecao = conjunto1.intersecao(conjunto2);
+            System.out.println("Interseção: " + intersecao);
 
-        meuConjunto.remove("Banana");
-        System.out.println("\nElementos após remover 'Banana': " + meuConjunto);
-        System.out.println("Tamanho: " + meuConjunto.tamanho()); // 2
-        System.out.println("Contém 'Banana'? " + meuConjunto.contem("Banana")); // false
+            // Diferença de conjunto1 e conjunto2
+            Conjunto<Integer> diferenca = conjunto1.diferenca(conjunto2);
+            System.out.println("Diferença: " + diferenca);
 
-        meuConjunto.adiciona("Pera");
-        meuConjunto.adiciona("Abacaxi");
-        System.out.println("\nElementos após adicionar Pera e Abacaxi: " + meuConjunto);
-        System.out.println("Tamanho: " + meuConjunto.tamanho());
-
-        meuConjunto.limpa();
-        System.out.println("\nElementos após limpar: " + meuConjunto); // []
-        System.out.println("Conjunto vazio? " + meuConjunto.estaVazia()); // true
-        System.out.println("Tamanho: " + meuConjunto.tamanho()); // 0
+            // Verifica se conjunto1 é subconjunto de conjunto2
+            System.out.println("É subconjunto? " + conjunto1.ehSubconjunto(conjunto2));
+        }
     }
+
 }

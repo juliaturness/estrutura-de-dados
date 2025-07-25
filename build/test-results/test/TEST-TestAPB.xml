@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestAPB" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-07-23T20:00:43" hostname="P50252" time="0.067">
+<testsuite name="TestAPB" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-07-25T17:56:54" hostname="P50252" time="0.076">
   <properties/>
-  <testcase name="Testa obter menor valor que" classname="TestAPB" time="0.028"/>
+  <testcase name="Testa obter menor valor que" classname="TestAPB" time="0.027"/>
   <testcase name="Testa listar em ordem" classname="TestAPB" time="0.002"/>
-  <testcase name="Testa listar pre ordem" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa adicionar valores" classname="TestAPB" time="0.002"/>
-  <testcase name="Testa obter menores que" classname="TestAPB" time="0.002"/>
+  <testcase name="Testa listar pre ordem" classname="TestAPB" time="0.003"/>
+  <testcase name="Testa adicionar valores" classname="TestAPB" time="0.001"/>
+  <testcase name="Testa obter menores que" classname="TestAPB" time="0.001"/>
   <testcase name="Testa obter maior valor que" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa criar uma Ã¡rvore" classname="TestAPB" time="0.007"/>
-  <testcase name="Testa obter faixa de valores" classname="TestAPB" time="0.001"/>
+  <testcase name="Testa criar uma Ã¡rvore" classname="TestAPB" time="0.003"/>
+  <testcase name="Testa obter faixa de valores" classname="TestAPB" time="0.002"/>
   <testcase name="Testa obter maior valor" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa obter menor valor" classname="TestAPB" time="0.002"/>
+  <testcase name="Testa obter menor valor" classname="TestAPB" time="0.001"/>
   <testcase name="Testa procurar valor" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa obter maiores que" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa listar em largura" classname="TestAPB" time="0.001"/>
-  <testcase name="Testa listar pos ordem" classname="TestAPB" time="0.0"/>
+  <testcase name="Testa obter maiores que" classname="TestAPB" time="0.0"/>
+  <testcase name="Testa listar em largura" classname="TestAPB" time="0.002"/>
+  <testcase name="Testa listar pos ordem" classname="TestAPB" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

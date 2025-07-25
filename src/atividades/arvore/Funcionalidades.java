@@ -170,4 +170,6 @@ public class Funcionalidades<T extends Comparable<T>> {
         }
         return copia;
     }
+
+
 }

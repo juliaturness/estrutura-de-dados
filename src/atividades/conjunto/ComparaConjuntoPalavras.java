@@ -1,7 +1,6 @@
 package atividades.conjunto;
 
 import esd.Conjunto;
-import esd.ListaSequencial;
 
 import java.io.FileReader;
 import java.util.Scanner;

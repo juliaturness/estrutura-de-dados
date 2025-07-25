@@ -1,53 +1,60 @@
 package atividades.arvore;
-import esd.APB;
-import esd.Lista;
-import esd.ListaSequencial;
-import esd.TabHash;
 
-import java.io.*;
-import java.util.Random;
+import esd.APB;
+
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class ConsultaNome {
 
-    public static void main(String[] args) {
-        // Criar árvore binária de pesquisa (APB) para consultar nomes
-        APB<String> arvore = new APB<>();
+    private Scanner arquivo;
+    private APB<String> arvore = new APB<>();
 
-        // Carregar nomes do arquivo para a árvore
-        carregarNomesDoArquivo("nomes.txt", arvore);
+    public ConsultaNome(String caminho) {
+        arquivo = scan(caminho);
+    }
 
-        // Loop de consulta
+    public Scanner scan(String caminho) {
+        try {
+            return new Scanner(new FileReader(caminho));
+        }  catch (Exception e) {
+            throw new RuntimeException("Erro ao ler o arquivo: " + caminho, e);
+        }
+    }
+
+    public void read() {
+        while (arquivo.hasNextLine()) {
+            String linha = arquivo.nextLine().trim().toLowerCase();
+            if (!linha.isEmpty()) arvore.adiciona(linha);;
+        }
+    }
+
+    public void consulta() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("Consultar> ");
-            String nomeConsultado = scanner.nextLine().trim();
+            System.out.print("> ");
+            String entrada = scanner.nextLine().trim().toLowerCase();
 
-            // Se o usuário pressionar ENTER, termina o programa
-            if (nomeConsultado.isEmpty()) {
-                break;
-            }
+            if (entrada.isEmpty())  break;
 
-            // Consulta o nome na árvore
-            if (arvore.procura(nomeConsultado) != null) {
-            }
+            String resultado = (arvore.procura(entrada) != null) ? "EXISTE" : "INEXISTENTE";
+            System.out.println(entrada + ": " + resultado);
         }
 
         scanner.close();
-        System.out.println("Programa terminado.");
+        System.out.println("Programa encerrado.");
     }
 
-    // Método para carregar nomes do arquivo e inserir na árvore
-    public static void carregarNomesDoArquivo(String nomeArquivo, APB<String> arvore) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                arvore.adiciona(linha.trim());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) {
+        if (args.length != 1)
+            throw new RuntimeException("<ConsultaNome> requer 1 argumento (caminho do arquivo)");
+
+        ConsultaNome cc = new ConsultaNome(args[0]);
+
+        cc.read();
+        cc.consulta();
     }
+
 }
 
 

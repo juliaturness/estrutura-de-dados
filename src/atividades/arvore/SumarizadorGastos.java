@@ -58,6 +58,7 @@ public class SumarizadorGastos {
 
     public SumarizadorGastos(String caminho) {
         arquivo = scan(caminho);
+        clientes = new APB<>();
     }
 
     private Scanner scan(String caminho) {
